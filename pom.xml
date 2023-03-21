@@ -15,7 +15,7 @@
 	</properties>
 	<dependencies>
 	
-		<!-- kakaocert SDK -->
+		<!-- Barocert SDK -->
 		<!-- <dependency>
 			<groupId>kr.co.linkhub</groupId>
 			<artifactId>barocert-sdk</artifactId>

@@ -14,7 +14,6 @@
         <legend>${requestScope['javax.servlet.forward.request_uri']}</legend>
         <ul>
             <li>ReceiptID (접수 아이디) : ${result.receiptID}</li>
-            <li>RequestID (요청 아이디) : ${result.requestID}</li>
             <li>State (상태) : ${result.state}</li>
             
             <c:forEach items="${result.bulkSignedData}" var="BulkSignedData" varStatus="status">

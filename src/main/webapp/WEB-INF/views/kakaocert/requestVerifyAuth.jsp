@@ -13,8 +13,8 @@
     <fieldset class="fieldset1">
         <legend>${requestScope['javax.servlet.forward.request_uri']}</legend>
         <ul>
-            <li>receiptId (접수아이디) : ${result.receiptId}</li>
-            <li>signedData (전자서명 데이터 전문) : ${result.signedData}</li>
+            <li>receiptID (접수아이디) : ${result.receiptID}</li>
+            <li>scheme (전자서명 데이터 전문) : ${result.scheme}</li>
         </ul>
     </fieldset>
 </div>

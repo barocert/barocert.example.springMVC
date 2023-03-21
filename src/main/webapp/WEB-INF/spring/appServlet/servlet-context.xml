@@ -36,7 +36,7 @@
     <util:properties id="EXAMPLE_CONFIG">
         <beans:prop key="LinkID">BKAKAO</beans:prop>
         <beans:prop key="SecretKey">egkxYN99ZObjLa3c0nr9/riG+a0VDkZu87LSGR8c37U=</beans:prop>
-        <beans:prop key="ClientCode">023020000003</beans:prop>
+        <beans:prop key="ClientCode">023030000003</beans:prop>
         <beans:prop key="IsIPRestrictOnOff">true</beans:prop>
         <beans:prop key="UseStaticIP">false</beans:prop>
         <beans:prop key="UseLocalTimeYN">true</beans:prop>

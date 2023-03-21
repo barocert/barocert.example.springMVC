@@ -10,17 +10,11 @@
 <div id="content">
     <p class="heading1">Barocert Kakaocert Service jsp Example.</p>
     <br/>
-     <fieldset class="fieldset1">
-        <legend>Service Attribute</legend>
-        <ul>
-            <li><a href="checkServiceAttribute">CheckServiceAttribute</a> - Serivce 속성 확인</li>
-        </ul>
-    </fieldset>
     <fieldset class="fieldset1">
         <legend>전자서명 API</legend>
         <ul>
-            <li><a href="kakaocert/requestESign">RequestESign</a> - 전자서명 요청(단건)</li>
-            <li><a href="kakaocert/bulkRequestESign">BulkRequestESign</a> - 전자서명 요청(다건)</li>
+            <li><a href="kakaocert/resultESign">RequestESign</a> - 전자서명 요청(단건)</li>
+            <li><a href="kakaocert/bulkResultESign">BulkRequestESign</a> - 전자서명 요청(다건)</li>
             <li><a href="kakaocert/getESignState">GetESignState</a> - 전자서명 상태확인(단건)</li>
             <li><a href="kakaocert/getBulkESignState">GetBulkESignState</a> - 전자서명 상태확인(다건)</li>
             <li><a href="kakaocert/verifyESign">VerifyESign</a> - 전자서명 검증(단건)</li>

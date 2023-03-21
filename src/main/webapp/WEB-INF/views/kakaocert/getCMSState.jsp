@@ -16,7 +16,6 @@
         <fieldset class="fieldset2">
             <ul>
             	<li>ReceiptID (접수 아이디) : ${result.receiptID}</li>
-            	<li>RequestID (요청 아이디) : ${result.requestID}</li>
             	<li>ClientCode (이용기관 코드) : ${result.clientCode}</li>
             	<li>State (상태코드) : ${result.state}</li>
             	<li>ExpireIn (요청 만료시간) : ${result.expireIn}</li>

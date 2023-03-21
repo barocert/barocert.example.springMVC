@@ -14,7 +14,6 @@
         <legend>${requestScope['javax.servlet.forward.request_uri']}</legend>
         <ul>
             <li>ReceiptID (접수 아이디) : ${result.receiptID}</li>
-            <li>RequestID (요청 아이디) : ${result.requestID}</li>
             <li>State (상태) : ${result.state}</li>
             <li>Token (전자서명 데이터 전문) : ${result.token}</li>
         </ul>

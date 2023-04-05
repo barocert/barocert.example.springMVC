@@ -4,17 +4,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="/resources/main.css" media="screen"/>
-    <title>Barocert Kakaocert Service SpringMVC Example.</title>
+    <title>Barocert Service SpringMVC Example</title>
 </head>
 <body>
 <div id="content">
-    <p class="heading1">Response</p>
+    <p class="heading1">카카오 본인인증 검증 API SDK SpringMVC Example</p>
     <br/>
     <fieldset class="fieldset1">
         <legend>${requestScope['javax.servlet.forward.request_uri']}</legend>
         <ul>
-            <li>receiptID (접수아이디) : ${result.receiptID}</li>
-            <li>scheme (앱스킴 [AppToApp 앱스킴 호출용]) : ${result.scheme}</li>
+            <li>ReceiptID (접수 아이디) : ${result.receiptID}</li>
+            <li>State (상태) : ${result.state}</li>
+            <li>signedData (전자서명 데이터 전문) : ${result.signedData}</li>
         </ul>
     </fieldset>
 </div>

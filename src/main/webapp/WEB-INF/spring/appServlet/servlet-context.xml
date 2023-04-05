@@ -34,16 +34,16 @@
         UseLocalTimeYN : 로컬시스템 시간 사용여부 true-사용, false-미사용, 기본값(true)
     -->
     <util:properties id="EXAMPLE_CONFIG">
-        <beans:prop key="LinkID">BKAKAO</beans:prop>
-        <beans:prop key="SecretKey">egkxYN99ZObjLa3c0nr9/riG+a0VDkZu87LSGR8c37U=</beans:prop>
-        <beans:prop key="ClientCode">023030000003</beans:prop>
+        <beans:prop key="LinkID">LINKHUB_BC</beans:prop>
+        <beans:prop key="SecretKey">npCAl0sHPpJqlvMbrcBmNagrxkQ74w9Sl0A+M++kMCE=</beans:prop>
+        <beans:prop key="ClientCode">023030000004</beans:prop>
         <beans:prop key="IsIPRestrictOnOff">true</beans:prop>
         <beans:prop key="UseStaticIP">false</beans:prop>
         <beans:prop key="UseLocalTimeYN">true</beans:prop>
     </util:properties>
     
 	<beans:beans>
-        <beans:bean id="kakaocertService" class="com.barocert.KakaocertServiceImp">
+        <beans:bean id="kakaocertService" class="com.barocert.kakaocert.KakaocertServiceImp">
             <beans:property name="linkID" value="#{EXAMPLE_CONFIG.LinkID}"/>
             <beans:property name="secretKey" value="#{EXAMPLE_CONFIG.SecretKey}"/>
             <beans:property name="IPRestrictOnOff" value="#{EXAMPLE_CONFIG.IsIPRestrictOnOff}"/>

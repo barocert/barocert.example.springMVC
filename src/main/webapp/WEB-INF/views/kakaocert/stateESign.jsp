@@ -4,11 +4,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="/resources/main.css" media="screen"/>
-    <title>Barocert Kakaocert Service SpringMVC Example.</title>
+    <title>Barocert Service SpringMVC Example</title>
 </head>
 <body>
 <div id="content">
-    <p class="heading1">Response</p>
+    <p class="heading1">카카오 전자서명(단건) 상태확인 API SDK SpringMVC Example</p>
     <br/>
     <fieldset class="fieldset1">
         <legend>${requestScope['javax.servlet.forward.request_uri']}</legend>
@@ -29,7 +29,7 @@
             	<li>CompleteDT (서명완료일시) : ${result.completeDT}</li>
             	<li>ExpireDT (서명만료일시) : ${result.expireDT}</li>
             	<li>VerifyDT (서명검증일시) : ${result.verifyDT}</li>
-            	<li>Scheme (앱스킴 [AppToApp 앱스킴 호출용]) : ${result.scheme}</li>
+            	<li>Scheme (앱스킴) : ${result.scheme}</li>
             	<li>AppUseYN (앱사용유무) : ${result.appUseYN}</li>
             </ul>
         </fieldset>

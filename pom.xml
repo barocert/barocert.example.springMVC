@@ -15,13 +15,6 @@
 	</properties>
 	<dependencies>
 	
-		<!-- Barocert SDK -->
-		<!-- <dependency>
-			<groupId>kr.co.linkhub</groupId>
-			<artifactId>barocert-sdk</artifactId>
-			<version>1.0.0</version>
-		</dependency> -->
-		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -88,6 +81,13 @@
 			<artifactId>guava</artifactId>
 			<version>14.0.1</version>
 		</dependency>
+		
+		<!-- Barocert SDK -->
+        <dependency>
+            <groupId>kr.co.linkhub</groupId>
+            <artifactId>barocert-sdk</artifactId>
+            <version>1.0.0</version>
+        </dependency>
 		        
 	</dependencies>
     <build>

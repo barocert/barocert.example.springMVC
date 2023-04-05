@@ -9,6 +9,6 @@ requirements
 reference
  * https://github.com/barocert/barocert.sdk.java
 
-1. 출금동의 
-2. 본인인증
-3. 전자서명
+1. 본인인증
+2. 전자서명
+3. 출금동의 

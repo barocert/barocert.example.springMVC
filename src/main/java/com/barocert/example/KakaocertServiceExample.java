@@ -83,7 +83,7 @@ public class KakaocertServiceExample {
     @RequestMapping(value = "kakaocert/stateVerifyAuth", method = RequestMethod.GET)
     public String stateVerifyAuth(Model m) {
 
-        // 전자서명 요청시 반환된 접수아이디
+        // 본인인증 요청시 반환된 접수아이디
         String receiptID = "02304050230300000040000000000003";
 
         try {
@@ -104,7 +104,7 @@ public class KakaocertServiceExample {
     @RequestMapping(value = "kakaocert/verifyVerifyAuth", method = RequestMethod.GET)
     public String verifyVerifyAuth(Model m) {
 
-        // 전자서명 요청시 반환된 접수아이디
+        // 본인인증 요청시 반환된 접수아이디
         String receiptID = "02304050230300000040000000000003";
 
         try {
@@ -320,6 +320,7 @@ public class KakaocertServiceExample {
     @RequestMapping(value = "kakaocert/requestCMS", method = RequestMethod.GET)
     public String requestCMS(Model m) throws BarocertException {
 
+    	// 출금동의 요청 정보 객체
         RequestCMS cmsRequest = new RequestCMS();
 
         // 수신자 정보
@@ -373,7 +374,7 @@ public class KakaocertServiceExample {
     @RequestMapping(value = "kakaocert/stateCMS", method = RequestMethod.GET)
     public String stateCMS(Model m) {
 
-        // 전자서명 요청시 반환된 접수아이디
+        // 출금동의 요청시 반환된 접수아이디
         String receiptID = "02304050230300000040000000000008";
 
         try {
@@ -394,7 +395,7 @@ public class KakaocertServiceExample {
     @RequestMapping(value = "kakaocert/verifyCMS", method = RequestMethod.GET)
     public String verifyCMS(Model m) {
 
-        // 전자서명 요청시 반환된 접수아이디
+        // 출금동의 요청시 반환된 접수아이디
         String receiptID = "02304050230300000040000000000008";
 
         try {

@@ -25,7 +25,7 @@
             <li><a href="kakaocert/requestESign">RequestESign</a> - 전자서명 요청(단건)</li>
             <li><a href="kakaocert/stateESign">StateESign</a> - 전자서명 상태확인(단건)</li>
             <li><a href="kakaocert/verifyESign">VerifyESign</a> - 전자서명 검증(단건)</li>
-            <li><a href="kakaocert/RequestMultiESign">BulkRequestESign</a> - 전자서명 요청(복수)</li>
+            <li><a href="kakaocert/requestMultiESign">RequestMultiESign</a> - 전자서명 요청(복수)</li>
             <li><a href="kakaocert/stateMultiESign">StateMultiESign</a> - 전자서명 상태확인(복수)</li>
             <li><a href="kakaocert/verifyMultiESign">VerifyMultiESign</a> - 전자서명 검증(복수)</li>
         </ul>

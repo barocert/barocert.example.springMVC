@@ -11,7 +11,7 @@
     <p class="heading1">Barocert Service SpringMVC Example</p>
     <br/>
     <fieldset class="fieldset1">
-        <legend>본인인증 API</legend>
+        <legend>Kakaocert 본인인증 API</legend>
         <ul>
             <li><a href="kakaocert/requestIdentity">RequestIdentity</a> - 본인인증 요청</li>
             <li><a href="kakaocert/getIdentityStatus">GetIdentityStatus</a> - 본인인증 상태확인</li>
@@ -20,7 +20,7 @@
     </fieldset>
     
     <fieldset class="fieldset1">
-        <legend>전자서명 API</legend>
+        <legend>Kakaocert 전자서명 API</legend>
         <ul>
             <li><a href="kakaocert/requestSign">RequestSign</a> - 전자서명 요청(단건)</li>
             <li><a href="kakaocert/getSignStatus">GetSignStatus</a> - 전자서명 상태확인(단건)</li>
@@ -33,7 +33,7 @@
 
 
     <fieldset class="fieldset1">
-        <legend>출금동의 API</legend>
+        <legend>Kakaocert 출금동의 API</legend>
         <ul>
             <li><a href="kakaocert/requestCMS">RequestCMS</a> - 출금동의 요청</li>
             <li><a href="kakaocert/getCMSStatus">GetCMSStatus</a> - 출금동의 상태확인</li>

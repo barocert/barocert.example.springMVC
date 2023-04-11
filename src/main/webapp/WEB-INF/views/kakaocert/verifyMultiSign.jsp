@@ -8,13 +8,19 @@
 </head>
 <body>
 <div id="content">
-    <p class="heading1">카카오 본인인증 요청 API SDK SpringMVC Example</p>
+    <p class="heading1">카카오 전자서명(복수) 검증 API SDK SpringMVC Example</p>
     <br/>
     <fieldset class="fieldset1">
         <legend>${requestScope['javax.servlet.forward.request_uri']}</legend>
-        <ul> 
-            <li>ReceiptID (접수아이디) : ${result.receiptID}</li>
-            <li>Scheme (앱스킴) : ${result.scheme}</li>
+        <ul>
+            <li>ReceiptID (접수 아이디) : ${result.receiptID}</li>
+            <li>State (상태) : ${result.state}</li>
+            
+            <c:forEach items="${result.multiSignedData}" var="multiSignedData" varStatus="status">
+            	<li>MultiSignedData (전자서명 데이터 전문) : ${multiSignedData}</li>
+            </c:forEach>
+            
+            <li>Ci (연계정보) : ${result.ci}</li>
         </ul>
     </fieldset>
 </div>

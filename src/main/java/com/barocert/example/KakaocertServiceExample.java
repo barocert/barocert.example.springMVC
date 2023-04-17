@@ -9,23 +9,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.barocert.BarocertException;
 import com.barocert.kakaocert.KakaocertService;
-import com.barocert.kakaocert.cms.RequestCMS;
-import com.barocert.kakaocert.cms.ResponseCMS;
-import com.barocert.kakaocert.cms.ResponseCMSStatus;
-import com.barocert.kakaocert.cms.ResponseVerifyCMS;
-import com.barocert.kakaocert.identity.RequestIdentity;
-import com.barocert.kakaocert.identity.ResponseIdentity;
-import com.barocert.kakaocert.identity.ResponseIdentityStatus;
-import com.barocert.kakaocert.identity.ResponseVerifyIdentity;
+import com.barocert.kakaocert.cms.CMS;
+import com.barocert.kakaocert.cms.CMSReceipt;
+import com.barocert.kakaocert.cms.CMSStatus;
+import com.barocert.kakaocert.cms.CMSResult;
+import com.barocert.kakaocert.identity.Identity;
+import com.barocert.kakaocert.identity.IdentityReceipt;
+import com.barocert.kakaocert.identity.IdentityStatus;
+import com.barocert.kakaocert.identity.IdentityResult;
 import com.barocert.kakaocert.sign.MultiSignTokens;
-import com.barocert.kakaocert.sign.RequestMultiSign;
-import com.barocert.kakaocert.sign.RequestSign;
-import com.barocert.kakaocert.sign.ResponseMultiSign;
-import com.barocert.kakaocert.sign.ResponseMultiSignStatus;
-import com.barocert.kakaocert.sign.ResponseSign;
-import com.barocert.kakaocert.sign.ResponseSignStatus;
-import com.barocert.kakaocert.sign.ResponseVerifyMultiSign;
-import com.barocert.kakaocert.sign.ResponseVerifySign;
+import com.barocert.kakaocert.sign.MultiSign;
+import com.barocert.kakaocert.sign.Sign;
+import com.barocert.kakaocert.sign.MultiSignReceipt;
+import com.barocert.kakaocert.sign.MultiSignStatus;
+import com.barocert.kakaocert.sign.SignReceipt;
+import com.barocert.kakaocert.sign.SignStatus;
+import com.barocert.kakaocert.sign.MultiSignResult;
+import com.barocert.kakaocert.sign.SignResult;
 
 @Controller
 public class KakaocertServiceExample {
@@ -43,7 +43,7 @@ public class KakaocertServiceExample {
     public String requestIdentity(Model m) throws BarocertException {
 
         // 본인인증 요청 정보 객체
-        RequestIdentity identityRequest = new RequestIdentity();
+        Identity identityRequest = new Identity();
 
         // 수신자 정보
         // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
@@ -67,7 +67,7 @@ public class KakaocertServiceExample {
         // IdentityRequest.setReturnURL("https://www.kakaocert.com");
 
         try {
-            ResponseIdentity result = kakaocertService.requestIdentity(ClientCode, identityRequest);
+            IdentityReceipt result = kakaocertService.requestIdentity(ClientCode, identityRequest);
             m.addAttribute("result", result);
         } catch (BarocertException ke) {
             m.addAttribute("Exception", ke);
@@ -87,7 +87,7 @@ public class KakaocertServiceExample {
         String receiptID = "02304050230300000040000000000003";
 
         try {
-            ResponseIdentityStatus result = kakaocertService.getIdentityStatus(ClientCode, receiptID);
+            IdentityStatus result = kakaocertService.getIdentityStatus(ClientCode, receiptID);
             m.addAttribute("result", result);
         } catch (BarocertException ke) {
             m.addAttribute("Exception", ke);
@@ -108,7 +108,7 @@ public class KakaocertServiceExample {
         String receiptID = "02304050230300000040000000000003";
 
         try {
-            ResponseVerifyIdentity result = kakaocertService.verifyIdentity(ClientCode, receiptID);
+            IdentityResult result = kakaocertService.verifyIdentity(ClientCode, receiptID);
             m.addAttribute("result", result);
         } catch (BarocertException ke) {
             m.addAttribute("Exception", ke);
@@ -125,7 +125,7 @@ public class KakaocertServiceExample {
     public String requestSign(Model m) throws BarocertException {
 
         // 전자서명 요청 정보 객체
-        RequestSign eSignRequest = new RequestSign();
+        Sign eSignRequest = new Sign();
 
         // 수신자 정보
         // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
@@ -152,7 +152,7 @@ public class KakaocertServiceExample {
         // eSignRequest.setReturnURL("https://www.kakaocert.com");
 
         try {
-            ResponseSign result = kakaocertService.requestSign(ClientCode, eSignRequest);
+            SignReceipt result = kakaocertService.requestSign(ClientCode, eSignRequest);
             m.addAttribute("result", result);
         } catch (BarocertException ke) {
             m.addAttribute("Exception", ke);
@@ -172,7 +172,7 @@ public class KakaocertServiceExample {
         String receiptID = "02304050230300000040000000000007";
 
         try {
-            ResponseSignStatus result = kakaocertService.getSignStatus(ClientCode, receiptID);
+            SignStatus result = kakaocertService.getSignStatus(ClientCode, receiptID);
             m.addAttribute("result", result);
         } catch (BarocertException ke) {
             m.addAttribute("Exception", ke);
@@ -193,7 +193,7 @@ public class KakaocertServiceExample {
         String receiptID = "02304050230300000040000000000007";
 
         try {
-            ResponseVerifySign result = kakaocertService.verifySign(ClientCode, receiptID);
+            SignResult result = kakaocertService.verifySign(ClientCode, receiptID);
             m.addAttribute("result", result);
 
         } catch (BarocertException ke) {
@@ -211,7 +211,7 @@ public class KakaocertServiceExample {
     public String requestMultiSign(Model m) throws BarocertException {
 
         // 전자서명 요청 정보 객체
-        RequestMultiSign multiSignRequest = new RequestMultiSign();
+        MultiSign multiSignRequest = new MultiSign();
 
         // 수신자 정보
         // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
@@ -254,7 +254,7 @@ public class KakaocertServiceExample {
         // request.setReturnURL("https://www.kakaocert.com");
 
         try {
-            ResponseMultiSign result = kakaocertService.requestMultiSign(ClientCode, multiSignRequest);
+            MultiSignReceipt result = kakaocertService.requestMultiSign(ClientCode, multiSignRequest);
             m.addAttribute("result", result);
         } catch (BarocertException ke) {
             m.addAttribute("Exception", ke);
@@ -274,7 +274,7 @@ public class KakaocertServiceExample {
         String receiptID = "02304050230300000040000000000006";
 
         try {
-            ResponseMultiSignStatus result = kakaocertService.getMultiSignStatus(ClientCode, receiptID);
+            MultiSignStatus result = kakaocertService.getMultiSignStatus(ClientCode, receiptID);
             m.addAttribute("result", result);
 
         } catch (BarocertException ke) {
@@ -296,7 +296,7 @@ public class KakaocertServiceExample {
         String receiptID = "02304050230300000040000000000006";
 
         try {
-            ResponseVerifyMultiSign result = kakaocertService.verifyMultiSign(ClientCode, receiptID);
+            MultiSignResult result = kakaocertService.verifyMultiSign(ClientCode, receiptID);
             m.addAttribute("result", result);
         } catch (BarocertException ke) {
             m.addAttribute("Exception", ke);
@@ -313,7 +313,7 @@ public class KakaocertServiceExample {
     public String requestCMS(Model m) throws BarocertException {
 
     	// 출금동의 요청 정보 객체
-        RequestCMS cmsRequest = new RequestCMS();
+        CMS cmsRequest = new CMS();
 
         // 수신자 정보
         // 휴대폰번호,성명,생년월일 또는 Ci(연계정보)값 중 택 일
@@ -350,7 +350,7 @@ public class KakaocertServiceExample {
         // request.setReturnURL("https://www.kakaocert.com");
 
         try {
-            ResponseCMS result = kakaocertService.requestCMS(ClientCode, cmsRequest);
+            CMSReceipt result = kakaocertService.requestCMS(ClientCode, cmsRequest);
             m.addAttribute("result", result);
         } catch (BarocertException ke) {
             m.addAttribute("Exception", ke);
@@ -370,7 +370,7 @@ public class KakaocertServiceExample {
         String receiptID = "02304050230300000040000000000008";
 
         try {
-            ResponseCMSStatus result = kakaocertService.getCMSStatus(ClientCode, receiptID);
+            CMSStatus result = kakaocertService.getCMSStatus(ClientCode, receiptID);
             m.addAttribute("result", result);
         } catch (BarocertException ke) {
             m.addAttribute("Exception", ke);
@@ -391,7 +391,7 @@ public class KakaocertServiceExample {
         String receiptID = "02304050230300000040000000000008";
 
         try {
-            ResponseVerifyCMS result = kakaocertService.verifyCMS(ClientCode, receiptID);
+            CMSResult result = kakaocertService.verifyCMS(ClientCode, receiptID);
             m.addAttribute("result", result);
         } catch (BarocertException ke) {
             m.addAttribute("Exception", ke);

@@ -50,7 +50,7 @@ public class KakaocertServiceExample {
         identity.setReceiverHP(kakaocertService.encrypt("01012341234"));
         identity.setReceiverName(kakaocertService.encrypt("홍길동"));
         identity.setReceiverBirthday(kakaocertService.encrypt("19700101"));
-        // identityRequest.setCi(kakaocertService.encrypt(""));
+        // identity.setCi(kakaocertService.encrypt(""));
 
         // 인증요청 메시지 제목 - 최대 40자
         identity.setReqTitle("인증요청 메시지 제목란");
@@ -64,7 +64,7 @@ public class KakaocertServiceExample {
         identity.setAppUseYN(false);
 
         // App to App 방식 이용시, 호출할 URL
-        // IdentityRequest.setReturnURL("https://www.kakaocert.com");
+        // identity.setReturnURL("https://www.kakaocert.com");
 
         try {
             IdentityReceipt result = kakaocertService.requestIdentity(ClientCode, identity);
@@ -132,7 +132,7 @@ public class KakaocertServiceExample {
         sign.setReceiverHP(kakaocertService.encrypt("01012341234"));
         sign.setReceiverName(kakaocertService.encrypt("홍길동"));
         sign.setReceiverBirthday(kakaocertService.encrypt("19700101"));
-        // eSignRequest.setCi(kakaocertService.encrypt(""));
+        // sign.setCi(kakaocertService.encrypt(""));
 
         // 인증요청 메시지 제목 - 최대 40자
         sign.setReqTitle("전자서명단건테스트");
@@ -149,7 +149,7 @@ public class KakaocertServiceExample {
         sign.setAppUseYN(false);
 
         // App to App 방식 이용시, 호출할 URL
-        // eSignRequest.setReturnURL("https://www.kakaocert.com");
+        // sign.setReturnURL("https://www.kakaocert.com");
 
         try {
             SignReceipt result = kakaocertService.requestSign(ClientCode, sign);
@@ -218,7 +218,7 @@ public class KakaocertServiceExample {
         multiSign.setReceiverHP(kakaocertService.encrypt("01012341234"));
         multiSign.setReceiverName(kakaocertService.encrypt("홍길동"));
         multiSign.setReceiverBirthday(kakaocertService.encrypt("19700101"));
-        // multiSignRequest.setCi(kakaocertService.encrypt(""));
+        // multiSign.setCi(kakaocertService.encrypt(""));
 
         // 인증요청 메시지 제목 - 최대 40자
         multiSign.setReqTitle("전자서명복수테스트");
@@ -251,7 +251,7 @@ public class KakaocertServiceExample {
         multiSign.setAppUseYN(false);
 
         // App to App 방식 이용시, 에러시 호출할 URL
-        // request.setReturnURL("https://www.kakaocert.com");
+        // multiSign.setReturnURL("https://www.kakaocert.com");
 
         try {
             MultiSignReceipt result = kakaocertService.requestMultiSign(ClientCode, multiSign);
@@ -320,7 +320,7 @@ public class KakaocertServiceExample {
         cms.setReceiverHP(kakaocertService.encrypt("01012341234"));
         cms.setReceiverName(kakaocertService.encrypt("홍길동"));
         cms.setReceiverBirthday(kakaocertService.encrypt("19700101"));
-        // cmsRequest.setCi(kakaocertService.encrypt("");
+        // cms.setCi(kakaocertService.encrypt("");
 
         // 인증요청 메시지 제목 - 최대 40자
         cms.setReqTitle("인증요청 메시지 제공란");
@@ -347,7 +347,7 @@ public class KakaocertServiceExample {
         cms.setAppUseYN(false);
 
         // App to App 방식 이용시, 에러시 호출할 URL
-        // request.setReturnURL("https://www.kakaocert.com");
+        // cms.setReturnURL("https://www.kakaocert.com");
 
         try {
             CMSReceipt result = kakaocertService.requestCMS(ClientCode, cms);

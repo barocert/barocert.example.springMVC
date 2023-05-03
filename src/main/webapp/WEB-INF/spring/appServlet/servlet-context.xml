@@ -34,8 +34,8 @@
         UseLocalTimeYN : 로컬시스템 시간 사용여부 true-사용, false-미사용, 기본값(true)
     -->
     <util:properties id="EXAMPLE_CONFIG">
-        <beans:prop key="LinkID">LINKHUB_BC</beans:prop>
-        <beans:prop key="SecretKey">npCAl0sHPpJqlvMbrcBmNagrxkQ74w9Sl0A+M++kMCE=</beans:prop>
+        <beans:prop key="LinkID">TESTER</beans:prop>
+        <beans:prop key="SecretKey">SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I=</beans:prop>
         <beans:prop key="ClientCode">023030000004</beans:prop>
         <beans:prop key="IsIPRestrictOnOff">true</beans:prop>
         <beans:prop key="UseStaticIP">false</beans:prop>

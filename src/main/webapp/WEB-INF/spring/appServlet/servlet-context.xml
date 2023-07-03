@@ -51,5 +51,15 @@
             <beans:property name="useLocalTimeYN" value = "#{EXAMPLE_CONFIG.UseLocalTimeYN}"/>
         </beans:bean>
     </beans:beans>
+
+    <beans:beans>
+        <beans:bean id="passcertService" class="com.barocert.passcert.PasscertServiceImp">
+            <beans:property name="linkID" value="#{EXAMPLE_CONFIG.LinkID}"/>
+            <beans:property name="secretKey" value="#{EXAMPLE_CONFIG.SecretKey}"/>
+            <beans:property name="IPRestrictOnOff" value="#{EXAMPLE_CONFIG.IsIPRestrictOnOff}"/>
+            <beans:property name="useStaticIP" value="#{EXAMPLE_CONFIG.UseStaticIP}"/>
+            <beans:property name="useLocalTimeYN" value = "#{EXAMPLE_CONFIG.UseLocalTimeYN}"/>
+        </beans:bean>
+    </beans:beans>
 	
 </beans:beans>

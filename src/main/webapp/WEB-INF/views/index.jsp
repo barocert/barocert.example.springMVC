@@ -40,6 +40,35 @@
             <li><a href="kakaocert/verifyCMS">VerifyCMS</a> - 출금동의 검증</li>
         </ul>
     </fieldset>
+
+    <br/>
+    <fieldset class="fieldset1">
+        <legend>Passcert 본인인증 API</legend>
+        <ul>
+            <li><a href="passcert/requestIdentity">RequestIdentity</a> - 본인인증 요청</li>
+            <li><a href="passcert/getIdentityStatus">GetIdentityStatus</a> - 본인인증 상태확인</li>
+            <li><a href="passcert/verifyIdentity">VerifyIdentity</a> - 본인인증 검증</li>
+        </ul>
+    </fieldset>
+    
+    <fieldset class="fieldset1">
+        <legend>Passcert 전자서명 API</legend>
+        <ul>
+            <li><a href="passcert/requestSign">RequestSign</a> - 전자서명 요청</li>
+            <li><a href="passcert/getSignStatus">GetSignStatus</a> - 전자서명 상태확인</li>
+            <li><a href="passcert/verifySign">VerifySign</a> - 전자서명 검증</li>
+        </ul>
+    </fieldset>
+
+
+    <fieldset class="fieldset1">
+        <legend>Passcert 출금동의 API</legend>
+        <ul>
+            <li><a href="passcert/requestCMS">RequestCMS</a> - 출금동의 요청</li>
+            <li><a href="passcert/getCMSStatus">GetCMSStatus</a> - 출금동의 상태확인</li>
+            <li><a href="passcert/verifyCMS">VerifyCMS</a> - 출금동의 검증</li>
+        </ul>
+    </fieldset>
 </div>
 </body>
 </html>

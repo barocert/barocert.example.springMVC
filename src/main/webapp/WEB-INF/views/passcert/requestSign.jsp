@@ -8,13 +8,14 @@
 </head>
 <body>
 <div id="content">
-    <p class="heading1">패스 전자서명(단건) 요청 API SDK SpringMVC Example</p>
+    <p class="heading1">패스 전자서명 요청 API SDK SpringMVC Example</p>
     <br/>
     <fieldset class="fieldset1">
         <legend>${requestScope['javax.servlet.forward.request_uri']}</legend>
         <ul>
             <li>receiptID (접수아이디) : ${result.receiptID}</li>
             <li>scheme (앱스킴) : ${result.scheme}</li>
+            <li>MarketUrl (접수아이디) : ${result.marketUrl}</li>
         </ul>
     </fieldset>
 </div>

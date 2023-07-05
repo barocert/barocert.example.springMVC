@@ -69,10 +69,10 @@ public class PasscertServiceExample {
         identity.setAppUseYN(false);
         // ApptoApp 인증방식에서 사용
         // 통신사 유형('SKT', 'KT', 'LGU'), 대문자 입력(대소문자 구분)
-        // request.setTelcoType("SKT");
+        // identity.setTelcoType("SKT");
         // ApptoApp 인증방식에서 사용
         // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
-        // request.setDeviceOSType("IOS");
+        // identity.setDeviceOSType("IOS");
 
         identity.setUseTssYN(false);
 

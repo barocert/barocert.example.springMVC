@@ -34,7 +34,6 @@
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>	
-		
 	
 		<!-- @Inject -->
 		<dependency>
@@ -69,13 +68,11 @@
 			<version>4.13.1</version>
 			<scope>test</scope>
 		</dependency>
-		
-	  	<dependency>
-		  	<groupId>com.google.code.gson</groupId>
-		  	<artifactId>gson</artifactId>
-		  	<version>2.3</version>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.3</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -83,11 +80,11 @@
 		</dependency>
 		
 		<!-- Barocert SDK -->
-        <dependency>
-            <groupId>kr.co.linkhub</groupId>
-            <artifactId>barocert-sdk</artifactId>
-            <version>1.0.6</version>
-        </dependency>
+		<dependency>
+			<groupId>kr.co.linkhub</groupId>
+			<artifactId>barocert-sdk</artifactId>
+			<version>1.0.6</version>
+		</dependency>
 	</dependencies>
     <build>
         <plugins>

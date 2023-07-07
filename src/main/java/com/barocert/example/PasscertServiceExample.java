@@ -18,6 +18,11 @@ import com.barocert.passcert.identity.Identity;
 import com.barocert.passcert.identity.IdentityReceipt;
 import com.barocert.passcert.identity.IdentityStatus;
 import com.barocert.passcert.identity.IdentityVerify;
+import com.barocert.passcert.login.Login;
+import com.barocert.passcert.login.LoginReceipt;
+import com.barocert.passcert.login.LoginResult;
+import com.barocert.passcert.login.LoginStatus;
+import com.barocert.passcert.login.LoginVerify;
 import com.barocert.passcert.identity.IdentityResult;
 import com.barocert.passcert.sign.Sign;
 import com.barocert.passcert.sign.SignReceipt;
@@ -40,7 +45,7 @@ public class PasscertServiceExample {
     @RequestMapping(value = "passcert/requestIdentity", method = RequestMethod.GET)
     public String requestIdentity(Model m) throws BarocertException {
 
-        // 본인인증 요청 정보 객체
+        // 본인인증 요청 정보
         Identity identity = new Identity();
 
         // 수신자 휴대폰번호 - 11자 (하이픈 제외)
@@ -116,11 +121,11 @@ public class PasscertServiceExample {
         // 본인인증 요청시 반환된 접수아이디
         String receiptID = "02304050230300000040000000000003";
 
-        // 서명검증 요청 정보 객체
+        // 검증 요청 정보
         IdentityVerify request = new IdentityVerify();
-        // 서명검증 요청 휴대폰번호 - 11자 (하이픈 제외)
+        // 검증 요청 휴대폰번호 - 11자 (하이픈 제외)
         request.setReceiverHP(passcertService.encrypt("01012341234")); 
-        // 서명검증 요청 성명
+        // 검증 요청 성명 - 최대 80자
         request.setReceiverName(passcertService.encrypt("홍길동")); 
 
         try {
@@ -140,7 +145,7 @@ public class PasscertServiceExample {
     @RequestMapping(value = "passcert/requestSign", method = RequestMethod.GET)
     public String requestSign(Model m) throws BarocertException {
 
-        // 전자서명 요청 정보 객체
+        // 전자서명 요청 정보
         Sign sign = new Sign();
         
         // 수신자 휴대폰번호 - 11자 (하이픈 제외)
@@ -231,11 +236,11 @@ public class PasscertServiceExample {
         // 전자서명 요청시 반환된 접수아이디
         String receiptID = "02304050230300000040000000000007";
 
-        // 검증 요청 정보 객체
+        // 검증 요청 정보
         SignVerify request = new SignVerify();
         // 검증 요청자 휴대폰번호 - 11자 (하이픈 제외)
         request.setReceiverHP(passcertService.encrypt("01012341234")); 
-        // 검증 요청자 성명
+        // 검증 요청자 성명 - 최대 80자
         request.setReceiverName(passcertService.encrypt("홍길동"));
 
         try {
@@ -256,7 +261,7 @@ public class PasscertServiceExample {
     @RequestMapping(value = "passcert/requestCMS", method = RequestMethod.GET)
     public String requestCMS(Model m) throws BarocertException {
 
-    	// 출금동의 요청 정보 객체
+    	// 출금동의 요청 정보
         CMS cms = new CMS();
 
         // 수신자 휴대폰번호 - 11자 (하이픈 제외)
@@ -342,11 +347,11 @@ public class PasscertServiceExample {
         // 출금동의 요청시 반환된 접수아이디
         String receiptID = "02304050230300000040000000000008";
 
-        // 검증 요청 정보 객체
+        // 검증 요청 정보
         CMSVerify request = new CMSVerify(); 
         // 검증 요청자 휴대폰번호 - 11자 (하이픈 제외)
         request.setReceiverHP(passcertService.encrypt("01012341234")); 
-        // 검증 요청자 성명
+        // 검증 요청자 성명 - 최대 80자
         request.setReceiverName(passcertService.encrypt("홍길동"));
 
         try {
@@ -358,6 +363,106 @@ public class PasscertServiceExample {
         }
 
         return "passcert/verifyCMS";
+    }
+
+    /*
+     * 패스 사용자에게 간편로그인을 요청합니다.
+     */
+    @RequestMapping(value = "passcert/requestLogin", method = RequestMethod.GET)
+    public String requestLogin(Model m) throws BarocertException {
+
+        // 간편로그인 요청 정보
+        Login login = new Login();
+
+        // 수신자 휴대폰번호 - 11자 (하이픈 제외)
+        login.setReceiverHP(passcertService.encrypt("01012341234"));
+        // 수신자 성명 - 최대 80자
+        login.setReceiverName(passcertService.encrypt("홍길동"));
+        // 수신자 생년월일 - 8자 (yyyyMMdd)
+        login.setReceiverBirthday(passcertService.encrypt("19700101"));
+
+        // 간편로그인 요청 메시지 제목 - 최대 40자
+        login.setReqTitle("패스써트 간편로그인 요청 타이틀");
+        // 간편로그인 요청 메시지 - 최대 500자
+        login.setReqMessage(passcertService.encrypt("패스써트 간편로그인 요청 내용"));
+        // 고객센터 연락처 - 최대 12자
+        login.setCallCenterNum("1600-9854");
+
+        // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
+        login.setExpireIn(1000);
+        // 서명 원문 - 최대 40자 까지 입력가능
+        login.setToken(passcertService.encrypt("간편로그인 요청 토큰"));
+
+        // 사용자 동의 필요 여부
+        login.setUserAgreementYN(true);
+        // AppToApp 인증요청 여부
+        // true - AppToApp 인증방식, false - Talk Message 인증방식
+        login.setAppUseYN(false);
+        // ApptoApp 인증방식에서 사용
+        // 통신사 유형('SKT', 'KT', 'LGU'), 대문자 입력(대소문자 구분)
+        // login.setTelcoType("SKT");
+        // ApptoApp 인증방식에서 사용
+        // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
+        // login.setDeviceOSType("IOS");
+
+        login.setUseTssYN(false);
+
+        try {
+            LoginReceipt result = passcertService.requestLogin(ClientCode, login);
+            m.addAttribute("result", result);
+        } catch (BarocertException pe) {
+            m.addAttribute("Exception", pe);
+            return "exception";
+        }
+
+        return "passcert/requestLogin";
+    }
+
+    /*
+     * 간편로그인 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+     */
+    @RequestMapping(value = "passcert/getLoginStatus", method = RequestMethod.GET)
+    public String getLoginStatus(Model m) {
+
+        // 간편로그인 요청시 반환된 접수아이디
+        String receiptID = "02307060230600000440000000000013";
+
+        try {
+            LoginStatus result = passcertService.getLoginStatus(ClientCode, receiptID);
+            m.addAttribute("result", result);
+        } catch (BarocertException pe) {
+            m.addAttribute("Exception", pe);
+            return "exception";
+        }
+
+        return "passcert/getLoginStatus";
+    }
+
+    /*
+     * 간편로그인 요청시 반환된 접수아이디를 통해 검증합니다. 
+     */
+    @RequestMapping(value = "passcert/verifyLogin", method = RequestMethod.GET)
+    public String verifyLogin(Model m) throws BarocertException {
+
+        // 간편로그인 요청시 반환된 접수아이디
+        String receiptID = "02307060230600000440000000000013";
+
+        // 검증 요청 정보
+        LoginVerify request = new LoginVerify();
+        // 검증 요청 휴대폰번호 - 11자 (하이픈 제외)
+        request.setReceiverHP(passcertService.encrypt("01012341234")); 
+        // 검증 요청 성명 - 최대 80자
+        request.setReceiverName(passcertService.encrypt("홍길동")); 
+
+        try {
+            LoginResult result = passcertService.verifyLogin(ClientCode, receiptID, request);
+            m.addAttribute("result", result);
+        } catch (BarocertException pe) {
+            m.addAttribute("Exception", pe);
+            return "exception";
+        }
+
+        return "passcert/verifyLogin";
     }
 
 }

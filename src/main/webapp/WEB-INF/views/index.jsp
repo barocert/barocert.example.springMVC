@@ -60,13 +60,21 @@
         </ul>
     </fieldset>
 
-
     <fieldset class="fieldset1">
         <legend>Passcert 출금동의 API</legend>
         <ul>
             <li><a href="passcert/requestCMS">RequestCMS</a> - 출금동의 요청</li>
             <li><a href="passcert/getCMSStatus">GetCMSStatus</a> - 출금동의 상태확인</li>
             <li><a href="passcert/verifyCMS">VerifyCMS</a> - 출금동의 검증</li>
+        </ul>
+    </fieldset>
+
+    <fieldset class="fieldset1">
+        <legend>Passcert 간편로그인 API</legend>
+        <ul>
+            <li><a href="passcert/requestLogin">RequestLogin</a> - 간편로그인 요청</li>
+            <li><a href="passcert/getLoginStatus">GetLoginStatus</a> - 간편로그인 상태확인</li>
+            <li><a href="passcert/verifyLogin">VerifyLogin</a> - 간편로그인 검증</li>
         </ul>
     </fieldset>
 </div>

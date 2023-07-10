@@ -79,8 +79,6 @@ public class PasscertServiceExample {
         // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
         // identity.setDeviceOSType("IOS");
 
-        identity.setUseTssYN(false);
-
         try {
             IdentityReceipt result = passcertService.requestIdentity(ClientCode, identity);
             m.addAttribute("result", result);
@@ -194,8 +192,6 @@ public class PasscertServiceExample {
         // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
         // sign.setDeviceOSType("IOS");
 
-        sign.setUseTssYN(false);
-
         try {
             SignReceipt result = passcertService.requestSign(ClientCode, sign);
             m.addAttribute("result", result);
@@ -303,12 +299,9 @@ public class PasscertServiceExample {
         // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
         // cms.setDeviceOSType("IOS");
 
-        cms.setUseTssYN(false);
-
         try {
             CMSReceipt result = passcertService.requestCMS(ClientCode, cms);
     
-            cms.setUseTssYN(false);
             m.addAttribute("result", result);
         } catch (BarocertException pe) {
             m.addAttribute("Exception", pe);
@@ -404,8 +397,6 @@ public class PasscertServiceExample {
         // ApptoApp 인증방식에서 사용
         // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
         // login.setDeviceOSType("IOS");
-
-        login.setUseTssYN(false);
 
         try {
             LoginReceipt result = passcertService.requestLogin(ClientCode, login);

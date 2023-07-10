@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="content">
-    <p class="heading1">패스 전사서명 검증 API SDK SpringMVC Example</p>
+    <p class="heading1">패스 전자서명 검증 API SDK SpringMVC Example</p>
     <br/>
     <fieldset class="fieldset1">
         <legend>${requestScope['javax.servlet.forward.request_uri']}</legend>

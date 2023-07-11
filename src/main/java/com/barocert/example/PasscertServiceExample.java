@@ -41,7 +41,6 @@ public class PasscertServiceExample {
 
     /*
      * 패스 사용자에게 본인인증 전자서명을 요청합니다.
-     * https://developers.barocert.com/reference/pass/java/identity/api#RequestIdentity
      */
     @RequestMapping(value = "passcert/requestIdentity", method = RequestMethod.GET)
     public String requestIdentity(Model m) throws BarocertException {
@@ -93,7 +92,6 @@ public class PasscertServiceExample {
 
     /*
      * 본인인증 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
-     * https://developers.barocert.com/reference/pass/java/identity/api#GetIdentityStatus
      */
     @RequestMapping(value = "passcert/getIdentityStatus", method = RequestMethod.GET)
     public String getIdentityStatus(Model m) {
@@ -114,7 +112,6 @@ public class PasscertServiceExample {
 
     /*
      * 본인인증 요청시 반환된 접수아이디를 통해 본인인증 서명을 검증합니다. 
-     * https://developers.barocert.com/reference/pass/java/identity/api#VerifyIdentity
      */
     @RequestMapping(value = "passcert/verifyIdentity", method = RequestMethod.GET)
     public String verifyIdentity(Model m) throws BarocertException {
@@ -142,7 +139,6 @@ public class PasscertServiceExample {
 
     /*
      * 패스 사용자에게 전자서명을 요청합니다.
-     * https://developers.barocert.com/reference/pass/java/sign/api#RequestSign
      */
     @RequestMapping(value = "passcert/requestSign", method = RequestMethod.GET)
     public String requestSign(Model m) throws BarocertException {
@@ -209,7 +205,6 @@ public class PasscertServiceExample {
 
     /*
      * 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
-     * https://developers.barocert.com/reference/pass/java/sign/api#GetSignStatus
      */
     @RequestMapping(value = "passcert/getSignStatus", method = RequestMethod.GET)
     public String getSignStatus(Model m) {
@@ -230,7 +225,6 @@ public class PasscertServiceExample {
 
     /*
      * 전자서명 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
-     * https://developers.barocert.com/reference/pass/java/sign/api#VerifySign
      */
     @RequestMapping(value = "passcert/verifySign", method = RequestMethod.GET)
     public String verfiySign(Model m) throws BarocertException {
@@ -259,7 +253,6 @@ public class PasscertServiceExample {
 
     /*
      * 패스 사용자에게 자동이체 출금동의 전자서명을 요청합니다.
-     * https://developers.barocert.com/reference/pass/java/cms/api#RequestCMS
      */
     @RequestMapping(value = "passcert/requestCMS", method = RequestMethod.GET)
     public String requestCMS(Model m) throws BarocertException {
@@ -320,7 +313,6 @@ public class PasscertServiceExample {
 
     /*
      * 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
-     * https://developers.barocert.com/reference/pass/java/cms/api#GetCMSStatus
      */
     @RequestMapping(value = "passcert/getCMSStatus", method = RequestMethod.GET)
     public String getCMSStatus(Model m) {
@@ -341,7 +333,6 @@ public class PasscertServiceExample {
 
     /*
      * 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
-     * https://developers.barocert.com/reference/pass/java/cms/api#VerifyCMS
      */
     @RequestMapping(value = "passcert/verifyCMS", method = RequestMethod.GET)
     public String verifyCMS(Model m) throws BarocertException {
@@ -369,7 +360,6 @@ public class PasscertServiceExample {
 
     /*
      * 패스 사용자에게 간편로그인을 요청합니다.
-     * https://developers.barocert.com/reference/pass/java/login/api#RequestLogin
      */
     @RequestMapping(value = "passcert/requestLogin", method = RequestMethod.GET)
     public String requestLogin(Model m) throws BarocertException {
@@ -421,7 +411,6 @@ public class PasscertServiceExample {
 
     /*
      * 간편로그인 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
-     * https://developers.barocert.com/reference/pass/java/login/api#GetLoginStatus
      */
     @RequestMapping(value = "passcert/getLoginStatus", method = RequestMethod.GET)
     public String getLoginStatus(Model m) {
@@ -442,7 +431,6 @@ public class PasscertServiceExample {
 
     /*
      * 간편로그인 요청시 반환된 접수아이디를 통해 검증합니다. 
-     * https://developers.barocert.com/reference/pass/java/login/api#VerifyLogin
      */
     @RequestMapping(value = "passcert/verifyLogin", method = RequestMethod.GET)
     public String verifyLogin(Model m) throws BarocertException {

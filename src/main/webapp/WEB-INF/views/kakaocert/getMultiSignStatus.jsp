@@ -23,7 +23,6 @@
                 <li>ReqTitle (인증요청 메시지 제목) : ${result.reqTitle}</li>
                 <li>AuthCategory (인증분류) : ${result.authCategory}</li>
                 <li>ReturnURL (복귀 URL) : ${result.returnURL}</li>
-                <li>TokenType (원문 구분) : ${result.tokenType}</li>
                 <li>RequestDT (서명요청일시) : ${result.requestDT}</li>
                 <li>ViewDT (서명조회일시) : ${result.viewDT}</li>
                 <li>CompleteDT (서명완료일시) : ${result.completeDT}</li>

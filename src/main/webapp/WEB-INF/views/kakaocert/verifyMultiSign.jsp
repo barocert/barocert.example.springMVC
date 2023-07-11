@@ -17,7 +17,7 @@
             <li>State (상태) : ${result.state}</li>
             
             <c:forEach items="${result.multiSignedData}" var="multiSignedData" varStatus="status">
-            	<li>MultiSignedData (전자서명 데이터 전문) : ${multiSignedData}</li>
+                <li>MultiSignedData (전자서명 데이터 전문) : ${multiSignedData}</li>
             </c:forEach>
             
             <li>Ci (연계정보) : ${result.ci}</li>

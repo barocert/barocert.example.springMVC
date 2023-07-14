@@ -69,6 +69,8 @@ public class PasscertServiceExample {
 
         // 사용자 동의 필요 여부
         identity.setUserAgreementYN(true);
+        // 사용자 정보 포함 여부
+        identity.setReceiverInfoYN(true);
         // AppToApp 인증요청 여부
         // true - AppToApp 인증방식, false - Talk Message 인증방식
         identity.setAppUseYN(false);
@@ -128,6 +130,10 @@ public class PasscertServiceExample {
 
         try {
             IdentityResult result = passcertService.verifyIdentity(ClientCode, receiptID, request);
+            result.setReceiverName(passcertService.decrypt(result.getReceiverName()));
+            result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday()));
+            result.setReceiverGender(passcertService.decrypt(result.getReceiverGender()));
+            result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType()));
             m.addAttribute("result", result);
         } catch (BarocertException pe) {
             m.addAttribute("Exception", pe);
@@ -241,6 +247,11 @@ public class PasscertServiceExample {
 
         try {
             SignResult result = passcertService.verifySign(ClientCode, receiptID, request);
+            result.setReceiverName(passcertService.decrypt(result.getReceiverName()));
+            result.setReceiverHP(passcertService.decrypt(result.getReceiverHP()));
+            result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday()));
+            result.setReceiverGender(passcertService.decrypt(result.getReceiverGender()));
+            result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType()));
             m.addAttribute("result", result);
 
         } catch (BarocertException pe) {
@@ -277,6 +288,8 @@ public class PasscertServiceExample {
 
         // 사용자 동의 필요 여부
         cms.setUserAgreementYN(true);
+        // 사용자 정보 포함 여부
+        cms.setReceiverInfoYN(true);
         // 출금은행명 - 최대 100자
         cms.setBankName(passcertService.encrypt("국민은행"));
         // 출금계좌번호 - 최대 31자
@@ -301,7 +314,7 @@ public class PasscertServiceExample {
 
         try {
             CMSReceipt result = passcertService.requestCMS(ClientCode, cms);
-    
+            
             m.addAttribute("result", result);
         } catch (BarocertException pe) {
             m.addAttribute("Exception", pe);
@@ -349,6 +362,11 @@ public class PasscertServiceExample {
 
         try {
             CMSResult result = passcertService.verifyCMS(ClientCode, receiptID, request);
+            result.setReceiverName(passcertService.decrypt(result.getReceiverName()));
+            result.setReceiverHP(passcertService.decrypt(result.getReceiverHP()));
+            result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday()));
+            result.setReceiverGender(passcertService.decrypt(result.getReceiverGender()));
+            result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType()));
             m.addAttribute("result", result);
         } catch (BarocertException pe) {
             m.addAttribute("Exception", pe);
@@ -388,6 +406,8 @@ public class PasscertServiceExample {
 
         // 사용자 동의 필요 여부
         login.setUserAgreementYN(true);
+        // 사용자 정보 포함 여부
+        login.setReceiverInfoYN(true);
         // AppToApp 인증요청 여부
         // true - AppToApp 인증방식, false - Talk Message 인증방식
         login.setAppUseYN(false);
@@ -447,6 +467,10 @@ public class PasscertServiceExample {
 
         try {
             LoginResult result = passcertService.verifyLogin(ClientCode, receiptID, request);
+            result.setReceiverName(passcertService.decrypt(result.getReceiverName()));
+            result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday()));
+            result.setReceiverGender(passcertService.decrypt(result.getReceiverGender()));
+            result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType()));
             m.addAttribute("result", result);
         } catch (BarocertException pe) {
             m.addAttribute("Exception", pe);

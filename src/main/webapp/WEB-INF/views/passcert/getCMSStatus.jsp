@@ -29,6 +29,7 @@
                 <li>RejectDT (서명거절일시) : ${result.rejectDT}</li>
                 <li>TokenType (원문 구분) : ${result.tokenType}</li>
                 <li>UserAgreementYN (사용자동의필요여부) : ${result.userAgreementYN}</li>
+                <li>ReceiverInfoYN (사용자정보포함여부) : ${result.receiverInfoYN}</li>
                 <li>TelcoType (통신사 유형) : ${result.telcoType}</li>
                 <li>DeviceOSType (모바일장비 유형) : ${result.deviceOSType}</li>
                 <li>Scheme (앱스킴) : ${result.scheme}</li>

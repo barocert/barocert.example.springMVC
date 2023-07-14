@@ -18,7 +18,7 @@
             <li>ReceiverName (수신자 성명) : ${result.receiverName}</li>
             <li>ReceiverBirthday (수신자 생년월일) : ${result.receiverBirthday}</li>
             <li>ReceiverGender (수신자 성별) : ${result.receiverGender}</li>
-            <li>TelcoType (통신사 유형) : ${result.telcoType}</li>
+            <li>ReceiverTelcoType (통신사 유형) : ${result.receiverTelcoType}</li>
             <li>SignedData (전자서명 데이터 전문) : ${result.signedData}</li>
             <li>Ci (연계정보) : ${result.ci}</li>
         </ul>

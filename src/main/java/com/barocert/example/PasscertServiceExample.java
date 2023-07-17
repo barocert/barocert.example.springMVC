@@ -35,6 +35,8 @@ public class PasscertServiceExample {
 
     @Autowired
     private PasscertService passcertService;
+    
+    private static final String DEC_ALGORITHM = "RSA";
 
     @Value("#{EXAMPLE_CONFIG.ClientCode}")
     private String ClientCode;
@@ -130,10 +132,10 @@ public class PasscertServiceExample {
 
         try {
             IdentityResult result = passcertService.verifyIdentity(ClientCode, receiptID, request);
-            result.setReceiverName(passcertService.decrypt(result.getReceiverName()));
-            result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday()));
-            result.setReceiverGender(passcertService.decrypt(result.getReceiverGender()));
-            result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType()));
+            result.setReceiverName(passcertService.decrypt(result.getReceiverName(), DEC_ALGORITHM));
+            result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday(), DEC_ALGORITHM));
+            result.setReceiverGender(passcertService.decrypt(result.getReceiverGender(), DEC_ALGORITHM));
+            result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType(), DEC_ALGORITHM));
             m.addAttribute("result", result);
         } catch (BarocertException pe) {
             m.addAttribute("Exception", pe);
@@ -247,11 +249,11 @@ public class PasscertServiceExample {
 
         try {
             SignResult result = passcertService.verifySign(ClientCode, receiptID, request);
-            result.setReceiverName(passcertService.decrypt(result.getReceiverName()));
-            result.setReceiverHP(passcertService.decrypt(result.getReceiverHP()));
-            result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday()));
-            result.setReceiverGender(passcertService.decrypt(result.getReceiverGender()));
-            result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType()));
+            result.setReceiverName(passcertService.decrypt(result.getReceiverName(), DEC_ALGORITHM));
+            result.setReceiverHP(passcertService.decrypt(result.getReceiverHP(), DEC_ALGORITHM));
+            result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday(), DEC_ALGORITHM));
+            result.setReceiverGender(passcertService.decrypt(result.getReceiverGender(), DEC_ALGORITHM));
+            result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType(), DEC_ALGORITHM));
             m.addAttribute("result", result);
 
         } catch (BarocertException pe) {
@@ -362,11 +364,11 @@ public class PasscertServiceExample {
 
         try {
             CMSResult result = passcertService.verifyCMS(ClientCode, receiptID, request);
-            result.setReceiverName(passcertService.decrypt(result.getReceiverName()));
-            result.setReceiverHP(passcertService.decrypt(result.getReceiverHP()));
-            result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday()));
-            result.setReceiverGender(passcertService.decrypt(result.getReceiverGender()));
-            result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType()));
+            result.setReceiverName(passcertService.decrypt(result.getReceiverName(), DEC_ALGORITHM));
+            result.setReceiverHP(passcertService.decrypt(result.getReceiverHP(), DEC_ALGORITHM));
+            result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday(), DEC_ALGORITHM));
+            result.setReceiverGender(passcertService.decrypt(result.getReceiverGender(), DEC_ALGORITHM));
+            result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType(), DEC_ALGORITHM));
             m.addAttribute("result", result);
         } catch (BarocertException pe) {
             m.addAttribute("Exception", pe);
@@ -467,10 +469,10 @@ public class PasscertServiceExample {
 
         try {
             LoginResult result = passcertService.verifyLogin(ClientCode, receiptID, request);
-            result.setReceiverName(passcertService.decrypt(result.getReceiverName()));
-            result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday()));
-            result.setReceiverGender(passcertService.decrypt(result.getReceiverGender()));
-            result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType()));
+            result.setReceiverName(passcertService.decrypt(result.getReceiverName(), DEC_ALGORITHM));
+            result.setReceiverBirthday(passcertService.decrypt(result.getReceiverBirthday(), DEC_ALGORITHM));
+            result.setReceiverGender(passcertService.decrypt(result.getReceiverGender(), DEC_ALGORITHM));
+            result.setReceiverTelcoType(passcertService.decrypt(result.getReceiverTelcoType(), DEC_ALGORITHM));
             m.addAttribute("result", result);
         } catch (BarocertException pe) {
             m.addAttribute("Exception", pe);

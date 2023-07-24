@@ -15,7 +15,7 @@
         <ul> 
             <li>ReceiptID (접수아이디) : ${result.receiptID}</li>
             <li>Scheme (앱스킴) : ${result.scheme}</li>
-            <li>MarketUrl (접수아이디) : ${result.marketUrl}</li>
+            <li>MarketUrl (앱다운로드URL) : ${result.marketUrl}</li>
         </ul>
     </fieldset>
 </div>

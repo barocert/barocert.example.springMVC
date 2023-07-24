@@ -425,7 +425,7 @@ public class KakaocertServiceExample {
     public String verifyLogin(Model m) {
 
         // 간편로그인 토큰받기 요청시 반환된 txID
-        String txID = "02304050230300000040000000000008";
+        String txID = "01daa94d3f-5ac9-429c-8661-40d0ad9ce3e3";
 
         try {
             LoginResult result = kakaocertService.verifyLogin(ClientCode, txID);

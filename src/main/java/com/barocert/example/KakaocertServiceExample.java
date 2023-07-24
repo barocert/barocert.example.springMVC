@@ -24,6 +24,7 @@ import com.barocert.kakaocert.sign.MultiSignReceipt;
 import com.barocert.kakaocert.sign.MultiSignStatus;
 import com.barocert.kakaocert.sign.SignReceipt;
 import com.barocert.kakaocert.sign.SignStatus;
+import com.barocert.passcert.login.LoginResult;
 import com.barocert.kakaocert.sign.MultiSignResult;
 import com.barocert.kakaocert.sign.SignResult;
 
@@ -413,6 +414,28 @@ public class KakaocertServiceExample {
         }
 
         return "kakaocert/verifyCMS";
+    }
+
+    /*
+     * 간편로그인 토큰받기 요청시 반환된 txID를 통해 서명을 검증합니다.
+     * 검증하기 API는 완료된 전자서명 요청당 1회만 요청 가능하며, 사용자가 서명을 완료후 유효시간(10분)이내에만 요청가능 합니다.
+     * https://developers.barocert.com/reference/kakao/java/login/api#VerifyLogin
+     */
+    @RequestMapping(value = "kakaocert/verifyLogin", method = RequestMethod.GET)
+    public String verifyLogin(Model m) {
+
+        // 간편로그인 토큰받기 요청시 반환된 txID
+        String txID = "02304050230300000040000000000008";
+
+        try {
+            LoginResult result = kakaocertService.verifyLogin(ClientCode, txID);
+            m.addAttribute("result", result);
+        } catch (BarocertException ke) {
+            m.addAttribute("Exception", ke);
+            return "exception";
+        }
+
+        return "kakaocert/verifyLogin";
     }
 
 }

@@ -17,6 +17,7 @@ import com.barocert.kakaocert.identity.Identity;
 import com.barocert.kakaocert.identity.IdentityReceipt;
 import com.barocert.kakaocert.identity.IdentityStatus;
 import com.barocert.kakaocert.identity.IdentityResult;
+import com.barocert.kakaocert.login.LoginResult;
 import com.barocert.kakaocert.sign.MultiSignTokens;
 import com.barocert.kakaocert.sign.MultiSign;
 import com.barocert.kakaocert.sign.Sign;
@@ -24,7 +25,6 @@ import com.barocert.kakaocert.sign.MultiSignReceipt;
 import com.barocert.kakaocert.sign.MultiSignStatus;
 import com.barocert.kakaocert.sign.SignReceipt;
 import com.barocert.kakaocert.sign.SignStatus;
-import com.barocert.passcert.login.LoginResult;
 import com.barocert.kakaocert.sign.MultiSignResult;
 import com.barocert.kakaocert.sign.SignResult;
 

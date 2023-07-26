@@ -18,12 +18,12 @@ import com.barocert.passcert.identity.Identity;
 import com.barocert.passcert.identity.IdentityReceipt;
 import com.barocert.passcert.identity.IdentityStatus;
 import com.barocert.passcert.identity.IdentityVerify;
+import com.barocert.passcert.identity.IdentityResult;
 import com.barocert.passcert.login.Login;
 import com.barocert.passcert.login.LoginReceipt;
 import com.barocert.passcert.login.LoginResult;
 import com.barocert.passcert.login.LoginStatus;
 import com.barocert.passcert.login.LoginVerify;
-import com.barocert.passcert.identity.IdentityResult;
 import com.barocert.passcert.sign.Sign;
 import com.barocert.passcert.sign.SignReceipt;
 import com.barocert.passcert.sign.SignStatus;
@@ -185,7 +185,7 @@ public class PasscertServiceExample {
         // 원본조회URL
         sign.setOriginalURL("https://www.passcert.co.kr");
         // 원본형태코드
-        // ('TEXT', 'HTML', 'DOWNLOAD_IMAGE', 'DOWNLOAD_DOCUMENT')
+        // 'TEXT', 'HTML', 'DOWNLOAD_IMAGE', 'DOWNLOAD_DOCUMENT'
         sign.setOriginalFormatCode("HTML");
 
         // AppToApp 인증요청 여부

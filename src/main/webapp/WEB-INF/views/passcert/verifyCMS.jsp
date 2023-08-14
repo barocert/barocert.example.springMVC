@@ -16,7 +16,8 @@
             <li>ReceiptID (접수 아이디) : ${result.receiptID}</li>
             <li>State (상태) : ${result.state}</li>
             <li>ReceiverName (수신자 성명) : ${result.receiverName}</li>
-            <li>ReceiverBirthday (수신자 생년월일) : ${result.receiverBirthday}</li>
+            <li>ReceiverYear (수신자 출생년도) : ${result.receiverYear}</li>
+            <li>ReceiverDay (수신자 출생월일) : ${result.receiverDay}</li>
             <li>ReceiverHP (수신자 휴대폰번호) : ${result.receiverHP}</li>
             <li>ReceiverGender (수신자 성별) : ${result.receiverGender}</li>
             <li>ReceiverTelcoType (통신사 유형) : ${result.receiverTelcoType}</li>

@@ -40,7 +40,8 @@ public class PasscertServiceExample {
     private String ClientCode;
 
     /*
-     * 패스 사용자에게 본인인증 전자서명을 요청합니다.
+     * 패스 이용자에게 본인인증을 요청합니다.
+     * https://developers.barocert.com/reference/pass/java/identity/api#RequestIdentity
      */
     @RequestMapping(value = "passcert/requestIdentity", method = RequestMethod.GET)
     public String requestIdentity(Model m) throws BarocertException {
@@ -93,7 +94,10 @@ public class PasscertServiceExample {
     }
 
     /*
-     * 본인인증 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+     * 본인인증 요청 후 반환받은 접수아이디로 본인인증 진행 상태를 확인합니다.
+     * 상태확인 함수는 본인인증 요청 함수를 호출한 당일 23시 59분 59초까지만 호출 가능합니다.
+     * 본인인증 요청 함수를 호출한 당일 23시 59분 59초 이후 상태확인 함수를 호출할 경우 오류가 반환됩니다.
+     * https://developers.barocert.com/reference/pass/java/identity/api#GetIdentityStatus
      */
     @RequestMapping(value = "passcert/getIdentityStatus", method = RequestMethod.GET)
     public String getIdentityStatus(Model m) {
@@ -113,7 +117,11 @@ public class PasscertServiceExample {
     }
 
     /*
-     * 본인인증 요청시 반환된 접수아이디를 통해 본인인증 서명을 검증합니다. 
+     * 완료된 전자서명을 검증하고 전자서명값(signedData)을 반환 받습니다.
+     * 반환받은 전자서명값(signedData)과 [1. RequestIdentity] 함수 호출에 입력한 Token의 동일 여부를 확인하여 이용자의 본인인증 검증을 완료합니다.
+     * 검증 함수는 본인인증 요청 함수를 호출한 당일 23시 59분 59초까지만 호출 가능합니다.
+     * 본인인증 요청 함수를 호출한 당일 23시 59분 59초 이후 검증 함수를 호출할 경우 오류가 반환됩니다.
+     * https://developers.barocert.com/reference/pass/java/identity/api#VerifyIdentity
      */
     @RequestMapping(value = "passcert/verifyIdentity", method = RequestMethod.GET)
     public String verifyIdentity(Model m) throws BarocertException {
@@ -131,7 +139,8 @@ public class PasscertServiceExample {
         try {
             IdentityResult result = passcertService.verifyIdentity(ClientCode, receiptID, request);
             result.setReceiverName(result.getReceiverName());
-            result.setReceiverBirthday(result.getReceiverBirthday());
+            result.setReceiverYear(result.getReceiverYear());
+            result.setReceiverDay(result.getReceiverDay());
             result.setReceiverGender(result.getReceiverGender());
             result.setReceiverTelcoType(result.getReceiverTelcoType());
             m.addAttribute("result", result);
@@ -144,7 +153,8 @@ public class PasscertServiceExample {
     }
 
     /*
-     * 패스 사용자에게 전자서명을 요청합니다.
+     * 패스 이용자에게 문서의 전자서명을 요청합니다.
+     * https://developers.barocert.com/reference/pass/java/sign/api#RequestSign
      */
     @RequestMapping(value = "passcert/requestSign", method = RequestMethod.GET)
     public String requestSign(Model m) throws BarocertException {
@@ -210,7 +220,10 @@ public class PasscertServiceExample {
     }
 
     /*
-     * 전자서명 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+     * 전자서명 요청 후 반환받은 접수아이디로 인증 진행 상태를 확인합니다.
+     * 상태확인 함수는 전자서명 요청 함수를 호출한 당일 23시 59분 59초까지만 호출 가능합니다.
+     * 전자서명 요청 함수를 호출한 당일 23시 59분 59초 이후 상태확인 함수를 호출할 경우 오류가 반환됩니다.
+     * https://developers.barocert.com/reference/pass/java/sign/api#GetSignStatus
      */
     @RequestMapping(value = "passcert/getSignStatus", method = RequestMethod.GET)
     public String getSignStatus(Model m) {
@@ -230,7 +243,10 @@ public class PasscertServiceExample {
     }
 
     /*
-     * 전자서명 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
+     * 완료된 전자서명을 검증하고 전자서명값(signedData)을 반환 받습니다.
+     * 검증 함수는 전자서명 요청 함수를 호출한 당일 23시 59분 59초까지만 호출 가능합니다.
+     * 전자서명 요청 함수를 호출한 당일 23시 59분 59초 이후 검증 함수를 호출할 경우 오류가 반환됩니다.
+     * https://developers.barocert.com/reference/pass/java/sign/api#VerifySign
      */
     @RequestMapping(value = "passcert/verifySign", method = RequestMethod.GET)
     public String verfiySign(Model m) throws BarocertException {
@@ -249,7 +265,8 @@ public class PasscertServiceExample {
             SignResult result = passcertService.verifySign(ClientCode, receiptID, request);
             result.setReceiverName(result.getReceiverName());
             result.setReceiverHP(result.getReceiverHP());
-            result.setReceiverBirthday(result.getReceiverBirthday());
+            result.setReceiverYear(result.getReceiverYear());
+            result.setReceiverDay(result.getReceiverDay());
             result.setReceiverGender(result.getReceiverGender());
             result.setReceiverTelcoType(result.getReceiverTelcoType());
             m.addAttribute("result", result);
@@ -263,7 +280,8 @@ public class PasscertServiceExample {
     }
 
     /*
-     * 패스 사용자에게 자동이체 출금동의 전자서명을 요청합니다.
+     * 패스 이용자에게 자동이체 출금동의를 요청합니다.
+     * https://developers.barocert.com/reference/pass/java/cms/api#RequestCMS
      */
     @RequestMapping(value = "passcert/requestCMS", method = RequestMethod.GET)
     public String requestCMS(Model m) throws BarocertException {
@@ -325,7 +343,10 @@ public class PasscertServiceExample {
     }
 
     /*
-     * 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+     * 자동이체 출금동의 요청 후 반환받은 접수아이디로 인증 진행 상태를 확인합니다.
+     * 상태확인 함수는 자동이체 출금동의 요청 함수를 호출한 당일 23시 59분 59초까지만 호출 가능합니다.
+     * 자동이체 출금동의 요청 함수를 호출한 당일 23시 59분 59초 이후 상태확인 함수를 호출할 경우 오류가 반환됩니다.
+     * https://developers.barocert.com/reference/pass/java/cms/api#GetCMSStatus
      */
     @RequestMapping(value = "passcert/getCMSStatus", method = RequestMethod.GET)
     public String getCMSStatus(Model m) {
@@ -345,7 +366,10 @@ public class PasscertServiceExample {
     }
 
     /*
-     * 자동이체 출금동의 요청시 반환된 접수아이디를 통해 서명을 검증합니다.
+     * 완료된 전자서명을 검증하고 전자서명값(signedData)을 반환 받습니다.
+     * 검증 함수는 자동이체 출금동의 요청 함수를 호출한 당일 23시 59분 59초까지만 호출 가능합니다.
+     * 자동이체 출금동의 요청 함수를 호출한 당일 23시 59분 59초 이후 검증 함수를 호출할 경우 오류가 반환됩니다.
+     * https://developers.barocert.com/reference/pass/java/cms/api#VerifyCMS
      */
     @RequestMapping(value = "passcert/verifyCMS", method = RequestMethod.GET)
     public String verifyCMS(Model m) throws BarocertException {
@@ -364,7 +388,8 @@ public class PasscertServiceExample {
             CMSResult result = passcertService.verifyCMS(ClientCode, receiptID, request);
             result.setReceiverName(result.getReceiverName());
             result.setReceiverHP(result.getReceiverHP());
-            result.setReceiverBirthday(result.getReceiverBirthday());
+            result.setReceiverYear(result.getReceiverYear());
+            result.setReceiverDay(result.getReceiverDay());
             result.setReceiverGender(result.getReceiverGender());
             result.setReceiverTelcoType(result.getReceiverTelcoType());
             m.addAttribute("result", result);
@@ -377,7 +402,8 @@ public class PasscertServiceExample {
     }
 
     /*
-     * 패스 사용자에게 간편로그인을 요청합니다.
+     * 패스 이용자에게 간편로그인을 요청합니다.
+     * https://developers.barocert.com/reference/pass/java/login/api#RequestLogin
      */
     @RequestMapping(value = "passcert/requestLogin", method = RequestMethod.GET)
     public String requestLogin(Model m) throws BarocertException {
@@ -430,7 +456,10 @@ public class PasscertServiceExample {
     }
 
     /*
-     * 간편로그인 요청시 반환된 접수아이디를 통해 서명 상태를 확인합니다.
+     * 간편로그인 요청 후 반환받은 접수아이디로 진행 상태를 확인합니다.
+     * 상태확인 함수는 간편로그인 요청 함수를 호출한 당일 23시 59분 59초까지만 호출 가능합니다.
+     * 간편로그인 요청 함수를 호출한 당일 23시 59분 59초 이후 상태확인 함수를 호출할 경우 오류가 반환됩니다.
+     * https://developers.barocert.com/reference/pass/java/login/api#GetLoginStatus
      */
     @RequestMapping(value = "passcert/getLoginStatus", method = RequestMethod.GET)
     public String getLoginStatus(Model m) {
@@ -450,7 +479,10 @@ public class PasscertServiceExample {
     }
 
     /*
-     * 간편로그인 요청시 반환된 접수아이디를 통해 검증합니다. 
+     * 완료된 전자서명을 검증하고 전자서명값(signedData)을 반환 받습니다.
+     * 검증 함수는 간편로그인 요청 함수를 호출한 당일 23시 59분 59초까지만 호출 가능합니다.
+     * 간편로그인 요청 함수를 호출한 당일 23시 59분 59초 이후 검증 함수를 호출할 경우 오류가 반환됩니다.
+     * https://developers.barocert.com/reference/pass/java/login/api#VerifyLogin
      */
     @RequestMapping(value = "passcert/verifyLogin", method = RequestMethod.GET)
     public String verifyLogin(Model m) throws BarocertException {
@@ -461,14 +493,15 @@ public class PasscertServiceExample {
         // 검증 요청 정보
         LoginVerify request = new LoginVerify();
         // 검증 요청 휴대폰번호 - 11자 (하이픈 제외)
-        request.setReceiverHP(passcertService.encrypt("01012341234")); 
+        request.setReceiverHP(passcertService.encrypt("01012341234"));
         // 검증 요청 성명 - 최대 80자
         request.setReceiverName(passcertService.encrypt("홍길동")); 
 
         try {
             LoginResult result = passcertService.verifyLogin(ClientCode, receiptID, request);
             result.setReceiverName(result.getReceiverName());
-            result.setReceiverBirthday(result.getReceiverBirthday());
+            result.setReceiverYear(result.getReceiverYear());
+            result.setReceiverDay(result.getReceiverDay());
             result.setReceiverGender(result.getReceiverGender());
             result.setReceiverTelcoType(result.getReceiverTelcoType());
             m.addAttribute("result", result);

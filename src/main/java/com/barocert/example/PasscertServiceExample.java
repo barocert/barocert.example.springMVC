@@ -138,11 +138,6 @@ public class PasscertServiceExample {
 
         try {
             IdentityResult result = passcertService.verifyIdentity(ClientCode, receiptID, request);
-            result.setReceiverName(result.getReceiverName());
-            result.setReceiverYear(result.getReceiverYear());
-            result.setReceiverDay(result.getReceiverDay());
-            result.setReceiverGender(result.getReceiverGender());
-            result.setReceiverTelcoType(result.getReceiverTelcoType());
             m.addAttribute("result", result);
         } catch (BarocertException pe) {
             m.addAttribute("Exception", pe);
@@ -263,12 +258,6 @@ public class PasscertServiceExample {
 
         try {
             SignResult result = passcertService.verifySign(ClientCode, receiptID, request);
-            result.setReceiverName(result.getReceiverName());
-            result.setReceiverHP(result.getReceiverHP());
-            result.setReceiverYear(result.getReceiverYear());
-            result.setReceiverDay(result.getReceiverDay());
-            result.setReceiverGender(result.getReceiverGender());
-            result.setReceiverTelcoType(result.getReceiverTelcoType());
             m.addAttribute("result", result);
 
         } catch (BarocertException pe) {
@@ -386,12 +375,6 @@ public class PasscertServiceExample {
 
         try {
             CMSResult result = passcertService.verifyCMS(ClientCode, receiptID, request);
-            result.setReceiverName(result.getReceiverName());
-            result.setReceiverHP(result.getReceiverHP());
-            result.setReceiverYear(result.getReceiverYear());
-            result.setReceiverDay(result.getReceiverDay());
-            result.setReceiverGender(result.getReceiverGender());
-            result.setReceiverTelcoType(result.getReceiverTelcoType());
             m.addAttribute("result", result);
         } catch (BarocertException pe) {
             m.addAttribute("Exception", pe);
@@ -499,11 +482,6 @@ public class PasscertServiceExample {
 
         try {
             LoginResult result = passcertService.verifyLogin(ClientCode, receiptID, request);
-            result.setReceiverName(result.getReceiverName());
-            result.setReceiverYear(result.getReceiverYear());
-            result.setReceiverDay(result.getReceiverDay());
-            result.setReceiverGender(result.getReceiverGender());
-            result.setReceiverTelcoType(result.getReceiverTelcoType());
             m.addAttribute("result", result);
         } catch (BarocertException pe) {
             m.addAttribute("Exception", pe);

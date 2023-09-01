@@ -36,7 +36,7 @@
     <util:properties id="EXAMPLE_CONFIG">
         <beans:prop key="LinkID">TESTER</beans:prop>
         <beans:prop key="SecretKey">SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I=</beans:prop>
-        <beans:prop key="ClientCode">023030000001</beans:prop>
+        <beans:prop key="ClientCode">023060000088</beans:prop>
         <beans:prop key="IsIPRestrictOnOff">true</beans:prop>
         <beans:prop key="UseStaticIP">false</beans:prop>
         <beans:prop key="UseLocalTimeYN">true</beans:prop>
@@ -54,6 +54,16 @@
 
     <beans:beans>
         <beans:bean id="passcertService" class="com.barocert.passcert.PasscertServiceImp">
+            <beans:property name="linkID" value="#{EXAMPLE_CONFIG.LinkID}"/>
+            <beans:property name="secretKey" value="#{EXAMPLE_CONFIG.SecretKey}"/>
+            <beans:property name="IPRestrictOnOff" value="#{EXAMPLE_CONFIG.IsIPRestrictOnOff}"/>
+            <beans:property name="useStaticIP" value="#{EXAMPLE_CONFIG.UseStaticIP}"/>
+            <beans:property name="useLocalTimeYN" value = "#{EXAMPLE_CONFIG.UseLocalTimeYN}"/>
+        </beans:bean>
+    </beans:beans>
+
+    <beans:beans>
+        <beans:bean id="navercertService" class="com.barocert.navercert.NavercertServiceImp">
             <beans:property name="linkID" value="#{EXAMPLE_CONFIG.LinkID}"/>
             <beans:property name="secretKey" value="#{EXAMPLE_CONFIG.SecretKey}"/>
             <beans:property name="IPRestrictOnOff" value="#{EXAMPLE_CONFIG.IsIPRestrictOnOff}"/>

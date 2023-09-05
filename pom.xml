@@ -83,7 +83,7 @@
 		<dependency>
 			<groupId>kr.co.linkhub</groupId>
 			<artifactId>barocert-sdk</artifactId>
-			<version>1.2.0</version>
+			<version>1.2.1</version>
 		</dependency>
 	</dependencies>
     <build>
@@ -108,7 +108,7 @@
                 <version>2.5.1</version>
                 <configuration>
                     <source>1.8</source>
-                    <target>1.6</target>
+                    <target>1.8</target>
                     <compilerArgument>-Xlint:all</compilerArgument>
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>

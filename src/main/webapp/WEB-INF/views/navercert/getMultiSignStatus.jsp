@@ -21,7 +21,11 @@
                 <li>CallCenterName (이용기관 명) : ${result.callCenterName}</li>
                 <li>CallCenterNum (이용기관 연락처) : ${result.callCenterNum}</li>
                 <li>ReqTitle (인증요청 메시지 제목) : ${result.reqTitle}</li>
-                <li>TokenType (원문 구분) : ${result.tokenType}</li>
+
+                <c:forEach items="${result.tokenTypes}" var="tokenType" varStatus="status">
+                    <li>TokenTypes (원문 구분) : ${tokenType}</li>
+                </c:forEach>
+
                 <li>ReturnURL (복귀 URL) : ${result.returnURL}</li>
                 <li>ExpireDT (서명만료일시) : ${result.expireDT}</li>
                 <li>Scheme (앱스킴) : ${result.scheme}</li>

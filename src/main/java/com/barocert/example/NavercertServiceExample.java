@@ -47,14 +47,14 @@ public class NavercertServiceExample {
 
         // AppToApp 인증요청 여부
         // true - AppToApp 인증방식, false - Talk Message 인증방식
-        identity.setAppUseYN(false);
+        identity.setAppUseYN(true);
 
         // ApptoApp 인증방식에서 사용
         // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
-        // identity.setDeviceOSType("ANDROID");
+         identity.setDeviceOSType("ANDROID");
 
-        // App to App 방식 이용시, 호출할 URL
-        // identity.setReturnURL("navercert://Identity");
+        // AppToApp 방식 이용시, 호출할 URL
+         identity.setReturnURL("navercert://sign");
 
         try {
             IdentityReceipt result = navercertService.requestIdentity(ClientCode, identity);
@@ -75,7 +75,7 @@ public class NavercertServiceExample {
     public String getIdentityStatus(Model m) {
 
         // 본인인증 요청시 반환된 접수아이디
-        String receiptID = "02304050230300000040000000000003";
+        String receiptID = "02309050230600000880000000000015";
 
         try {
             IdentityStatus result = navercertService.getIdentityStatus(ClientCode, receiptID);
@@ -98,7 +98,7 @@ public class NavercertServiceExample {
     public String verifyIdentity(Model m) {
 
         // 본인인증 요청시 반환된 접수아이디
-        String receiptID = "02304050230300000040000000000003";
+        String receiptID = "02309050230600000880000000000015";
 
         try {
             IdentityResult result = navercertService.verifyIdentity(ClientCode, receiptID);
@@ -144,14 +144,14 @@ public class NavercertServiceExample {
 
         // AppToApp 인증요청 여부
         // true - AppToApp 인증방식, false - Talk Message 인증방식
-        sign.setAppUseYN(false);
+        sign.setAppUseYN(true);
 
-        // ApptoApp 인증방식에서 사용
+        // AppToApp 인증방식에서 사용
         // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
-        // sign.setDeviceOSType("ANDROID");
+         sign.setDeviceOSType("ANDROID");
 
-        // App to App 방식 이용시, 호출할 URL
-        // sign.setReturnURL("navercert://Sign");
+        // AppToApp 방식 이용시, 호출할 URL
+         sign.setReturnURL("navercert://sign");
 
         try {
             SignReceipt result = navercertService.requestSign(ClientCode, sign);
@@ -172,7 +172,7 @@ public class NavercertServiceExample {
     public String getSignStatus(Model m) {
 
         // 전자서명 요청시 반환된 접수아이디
-        String receiptID = "02304050230300000040000000000007";
+        String receiptID = "02309050230600000880000000000021";
 
         try {
             SignStatus result = navercertService.getSignStatus(ClientCode, receiptID);
@@ -194,7 +194,7 @@ public class NavercertServiceExample {
     public String verfiySign(Model m) {
 
         // 전자서명 요청시 반환된 접수아이디
-        String receiptID = "02304050230300000040000000000007";
+        String receiptID = "02309050230600000880000000000018";
 
         try {
             SignResult result = navercertService.verifySign(ClientCode, receiptID);
@@ -257,14 +257,14 @@ public class NavercertServiceExample {
 
         // AppToApp 인증요청 여부
         // true - AppToApp 인증방식, false - Talk Message 인증방식
-        multiSign.setAppUseYN(false);
+        multiSign.setAppUseYN(true);
 
-        // ApptoApp 인증방식에서 사용
+        // AppToApp 인증방식에서 사용
         // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
-        // multiSign.setDeviceOSType("ANDROID");
+         multiSign.setDeviceOSType("ANDROID");
 
-        // App to App 방식 이용시, 에러시 호출할 URL
-        // multiSign.setReturnURL("navercert://Sign");
+        // AppToApp 방식 이용시, 에러시 호출할 URL
+         multiSign.setReturnURL("navercert://sign");
 
         try {
             MultiSignReceipt result = navercertService.requestMultiSign(ClientCode, multiSign);
@@ -285,7 +285,7 @@ public class NavercertServiceExample {
     public String getMultiSignStatus(Model m) {
 
         // 전자서명 요청시 반환된 접수아이디
-        String receiptID = "02304050230300000040000000000006";
+        String receiptID = "02309050230600000880000000000017";
 
         try {
             MultiSignStatus result = navercertService.getMultiSignStatus(ClientCode, receiptID);
@@ -308,7 +308,7 @@ public class NavercertServiceExample {
     public String verifyMultiSign(Model m) {
 
         // 전자서명 요청시 반환된 접수아이디
-        String receiptID = "02304050230300000040000000000006";
+        String receiptID = "02309050230600000880000000000017";
 
         try {
             MultiSignResult result = navercertService.verifyMultiSign(ClientCode, receiptID);

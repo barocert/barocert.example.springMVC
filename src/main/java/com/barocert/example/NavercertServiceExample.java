@@ -47,14 +47,14 @@ public class NavercertServiceExample {
 
         // AppToApp 인증요청 여부
         // true - AppToApp 인증방식, false - Talk Message 인증방식
-        identity.setAppUseYN(true);
+        identity.setAppUseYN(false);
 
         // ApptoApp 인증방식에서 사용
         // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
-         identity.setDeviceOSType("ANDROID");
+        //identity.setDeviceOSType("ANDROID");
 
         // AppToApp 방식 이용시, 호출할 URL
-         identity.setReturnURL("navercert://sign");
+        //identity.setReturnURL("navercert://sign");
 
         try {
             IdentityReceipt result = navercertService.requestIdentity(ClientCode, identity);
@@ -144,14 +144,14 @@ public class NavercertServiceExample {
 
         // AppToApp 인증요청 여부
         // true - AppToApp 인증방식, false - Talk Message 인증방식
-        sign.setAppUseYN(true);
+        sign.setAppUseYN(false);
 
         // AppToApp 인증방식에서 사용
         // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
-         sign.setDeviceOSType("ANDROID");
+        // sign.setDeviceOSType("ANDROID");
 
         // AppToApp 방식 이용시, 호출할 URL
-         sign.setReturnURL("navercert://sign");
+        // sign.setReturnURL("navercert://sign");
 
         try {
             SignReceipt result = navercertService.requestSign(ClientCode, sign);
@@ -257,14 +257,14 @@ public class NavercertServiceExample {
 
         // AppToApp 인증요청 여부
         // true - AppToApp 인증방식, false - Talk Message 인증방식
-        multiSign.setAppUseYN(true);
+        multiSign.setAppUseYN(false);
 
         // AppToApp 인증방식에서 사용
         // 모바일장비 유형('ANDROID', 'IOS'), 대문자 입력(대소문자 구분)
-         multiSign.setDeviceOSType("ANDROID");
+        // multiSign.setDeviceOSType("ANDROID");
 
         // AppToApp 방식 이용시, 에러시 호출할 URL
-         multiSign.setReturnURL("navercert://sign");
+        // multiSign.setReturnURL("navercert://sign");
 
         try {
             MultiSignReceipt result = navercertService.requestMultiSign(ClientCode, multiSign);

@@ -57,16 +57,16 @@ public class PasscertServiceExample {
         identity.setReceiverBirthday(passcertService.encrypt("19700101"));
 
         // 인증요청 메시지 제목 - 최대 40자
-        identity.setReqTitle("패스써트 본인인증 인증요청 타이틀");
+        identity.setReqTitle("본인인증 요청 메시지 제목");
         // 인증요청 메시지 - 최대 500자
-        identity.setReqMessage(passcertService.encrypt("패스써트 본인인증 인증요청 내용"));
+        identity.setReqMessage(passcertService.encrypt("본인인증 요청 메시지"));
         // 고객센터 연락처 - 최대 12자
         identity.setCallCenterNum("1600-9854");
 
         // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
         identity.setExpireIn(1000);
         // 서명 원문 - 최대 40자 까지 입력가능
-        identity.setToken(passcertService.encrypt("본인인증요청토큰"));
+        identity.setToken(passcertService.encrypt("본인인증 요청 원문"));
 
         // 사용자 동의 필요 여부
         identity.setUserAgreementYN(true);
@@ -165,15 +165,15 @@ public class PasscertServiceExample {
         sign.setReceiverBirthday(passcertService.encrypt("19700101"));
         
         // 인증요청 메시지 제목 - 최대 40자
-        sign.setReqTitle("패스써트 전자서명 인증요청 타이틀");
+        sign.setReqTitle("전자서명 요청 메시지 제목");
         // 인증요청 메시지 - 최대 500자
-        sign.setReqMessage(passcertService.encrypt("패스써트 전자서명 인증요청 내용"));
+        sign.setReqMessage(passcertService.encrypt("전자서명 요청 메시지"));
         // 고객센터 연락처
         sign.setCallCenterNum("1600-9854");
         // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
         sign.setExpireIn(1000);
         // 서명 원문 - 원문 2,800자 까지 입력가능
-        sign.setToken(passcertService.encrypt("전자서명 테스트 데이터"));
+        sign.setToken(passcertService.encrypt("전자서명 요청 원문"));
         // 서명 원문 유형
         // 'TEXT' - 일반 텍스트, 'HASH' - HASH 데이터, 'URL' - URL 데이터
         // 원본데이터(originalTypeCode, originalURL, originalFormatCode) 입력시 'TEXT'사용 불가
@@ -285,9 +285,9 @@ public class PasscertServiceExample {
         // 수신자 생년월일 - 8자 (yyyyMMdd)
         cms.setReceiverBirthday(passcertService.encrypt("19700101"));
         // 인증요청 메시지 제목 - 최대 40자
-        cms.setReqTitle("패스써트 출금동의 인증요청 타이틀");
+        cms.setReqTitle("출금동의 요청 메시지 제목");
         // 인증요청 메시지 - 최대 500자
-        cms.setReqMessage(passcertService.encrypt("패스써트 출금동의 인증요청 내용"));
+        cms.setReqMessage(passcertService.encrypt("출금동의 요청 메시지"));
         // 고객센터 연락처 - 최대 12자
         cms.setCallCenterNum("1600-9854");
         // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
@@ -402,16 +402,16 @@ public class PasscertServiceExample {
         login.setReceiverBirthday(passcertService.encrypt("19700101"));
 
         // 간편로그인 요청 메시지 제목 - 최대 40자
-        login.setReqTitle("패스써트 간편로그인 요청 타이틀");
+        login.setReqTitle("간편로그인 요청 메시지 제목");
         // 간편로그인 요청 메시지 - 최대 500자
-        login.setReqMessage(passcertService.encrypt("패스써트 간편로그인 요청 내용"));
+        login.setReqMessage(passcertService.encrypt("간편로그인 요청 메시지"));
         // 고객센터 연락처 - 최대 12자
         login.setCallCenterNum("1600-9854");
 
         // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
         login.setExpireIn(1000);
         // 서명 원문 - 최대 40자 까지 입력가능
-        login.setToken(passcertService.encrypt("간편로그인 요청 토큰"));
+        login.setToken(passcertService.encrypt("간편로그인 요청 원문"));
 
         // 사용자 동의 필요 여부
         login.setUserAgreementYN(true);

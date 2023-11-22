@@ -209,7 +209,7 @@ public class NavercertServiceExample {
     }
 
     /*
-     * 네이버 이용자에게 복수(최대 20건) 문서의 전자서명을 요청합니다.
+     * 네이버 이용자에게 복수(최대 50건) 문서의 전자서명을 요청합니다.
      * https://developers.barocert.com/reference/naver/java/sign/api-multi#RequestMultiSign
      */
     @RequestMapping(value = "navercert/requestMultiSign", method = RequestMethod.GET)
@@ -234,7 +234,7 @@ public class NavercertServiceExample {
         // 인증요청 메시지 - 최대 500자
         multiSign.setReqMessage(navercertService.encrypt("전자서명(복수) 요청 메시지"));
 
-        // 개별문서 등록 - 최대 20 건
+        // 개별문서 등록 - 최대 50 건
         // 개별 요청 정보 객체
         MultiSignTokens token = new MultiSignTokens();
         // 서명 원문 - 원문 2,800자 까지 입력가능

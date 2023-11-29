@@ -234,7 +234,6 @@ public class KakaocertServiceExample {
         multiSign.setReceiverName(kakaocertService.encrypt("홍길동"));
         // 수신자 생년월일 - 8자 (yyyyMMdd)
         multiSign.setReceiverBirthday(kakaocertService.encrypt("19700101"));
-        // multiSign.setCi(kakaocertService.encrypt(""));
 
         // 인증요청 메시지 제목 - 최대 40자
         multiSign.setReqTitle("전자서명(복수) 요청 메시지 제목");
@@ -343,7 +342,6 @@ public class KakaocertServiceExample {
         cms.setReceiverName(kakaocertService.encrypt("홍길동"));
         // 수신자 생년월일 - 8자 (yyyyMMdd)
         cms.setReceiverBirthday(kakaocertService.encrypt("19700101"));
-        // cms.setCi(kakaocertService.encrypt("");
 
         // 인증요청 메시지 제목 - 최대 40자
         cms.setReqTitle("출금동의 요청 메시지 제목");

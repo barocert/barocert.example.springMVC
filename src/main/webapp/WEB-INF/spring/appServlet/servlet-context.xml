@@ -35,7 +35,7 @@
     <util:properties id="EXAMPLE_CONFIG">
         <beans:prop key="LinkID">TESTER</beans:prop>
         <beans:prop key="SecretKey">SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I=</beans:prop>
-        <beans:prop key="ClientCode">023060000088</beans:prop>
+        <beans:prop key="ClientCode">023040000001</beans:prop>
         <beans:prop key="IsIPRestrictOnOff">true</beans:prop>
         <beans:prop key="UseStaticIP">false</beans:prop>
     </util:properties>

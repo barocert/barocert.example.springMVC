@@ -8,19 +8,15 @@
 </head>
 <body>
 <div id="content">
-    <p class="heading1">네이버 전자서명(단건) 상태확인 API SDK SpringMVC Example</p>
+    <p class="heading1">네이버 출금동의 요청 API SDK SpringMVC Example</p>
     <br/>
     <fieldset class="fieldset1">
         <legend>${requestScope['javax.servlet.forward.request_uri']}</legend>
-        <fieldset class="fieldset2">
-            <ul>
-                <li>ReceiptID (접수 아이디) : ${result.receiptID}</li>
-                <li>ClientCode (이용기관 코드) : ${result.clientCode}</li>
-                <li>State (상태코드) : ${result.state}</li>
-                <li>ExpireDT (서명만료일시) : ${result.expireDT}</li>
-            </ul>
-        </fieldset>
-        
+        <ul> 
+            <li>ReceiptID (접수아이디) : ${result.receiptID}</li>
+            <li>Scheme (앱스킴) : ${result.scheme}</li>
+            <li>MarketUrl (앱다운로드URL) : ${result.marketUrl}</li>
+        </ul>
     </fieldset>
 </div>
 </body>

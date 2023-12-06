@@ -8,10 +8,11 @@
 </head>
 <body>
 <div id="content">
-    <p class="heading1">네이버 전자서명(단건) 상태확인 API SDK SpringMVC Example</p>
+    <p class="heading1">네이버 출금동의 상태확인 API SDK SpringMVC Example</p>
     <br/>
     <fieldset class="fieldset1">
         <legend>${requestScope['javax.servlet.forward.request_uri']}</legend>
+        
         <fieldset class="fieldset2">
             <ul>
                 <li>ReceiptID (접수 아이디) : ${result.receiptID}</li>

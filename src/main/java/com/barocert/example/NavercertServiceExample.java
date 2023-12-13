@@ -158,7 +158,7 @@ public class NavercertServiceExample {
         // 서명 원문 유형
         // sign.setTokenType("HASH");
         // 서명 원문 유형이 HASH인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
-        // sign.setToken(navercertService.encrypt(navercertService.sha256("전자서명(단건) 요청 원문")));
+        // sign.setToken(navercertService.encrypt(navercertService.sha256_base64url("전자서명(단건) 요청 원문")));
 
         // AppToApp 인증요청 여부
         // true - AppToApp 인증방식, false - Talk Message 인증방식
@@ -264,7 +264,7 @@ public class NavercertServiceExample {
         // 서명 원문 유형
         // token.setTokenType("HASH");
         // 서명 원문 유형이 HASH인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
-        // token.setToken(navercertService.encrypt(navercertService.sha256("전자서명(복수) 요청 원문 1")));
+        // token.setToken(navercertService.encrypt(navercertService.sha256_base64url("전자서명(복수) 요청 원문 1")));
         multiSign.addToken(token);
 
         // 개별 요청 정보 객체
@@ -277,7 +277,7 @@ public class NavercertServiceExample {
         // 서명 원문 유형
         // token2.setTokenType("HASH");
         // 서명 원문 유형이 HASH인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
-        // token2.setToken(navercertService.encrypt(navercertService.sha256("전자서명(복수) 요청 원문 2")));
+        // token2.setToken(navercertService.encrypt(navercertService.sha256_base64url("전자서명(복수) 요청 원문 2")));
         multiSign.addToken(token2);
 
         // AppToApp 인증요청 여부

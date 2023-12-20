@@ -73,7 +73,7 @@ public class PasscertServiceExample {
         // 사용자 정보 포함 여부
         identity.setReceiverInfoYN(true);
         // AppToApp 인증요청 여부
-        // true - AppToApp 인증방식, false - Talk Message 인증방식
+        // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
         identity.setAppUseYN(false);
         // ApptoApp 인증방식에서 사용
         // 통신사 유형('SKT', 'KT', 'LGU'), 대문자 입력(대소문자 구분)
@@ -194,7 +194,7 @@ public class PasscertServiceExample {
         sign.setOriginalFormatCode("HTML");
 
         // AppToApp 인증요청 여부
-        // true - AppToApp 인증방식, false - Talk Message 인증방식
+        // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
         sign.setAppUseYN(false);
         // ApptoApp 인증방식에서 사용
         // 통신사 유형('SKT', 'KT', 'LGU'), 대문자 입력(대소문자 구분)
@@ -310,7 +310,7 @@ public class PasscertServiceExample {
         cms.setBankWithdraw(passcertService.encrypt("1,000,000원"));
 
         // AppToApp 인증요청 여부
-        // true - AppToApp 인증방식, false - Talk Message 인증방식
+        // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
         cms.setAppUseYN(false);
         // ApptoApp 인증방식에서 사용
         // 통신사 유형('SKT', 'KT', 'LGU'), 대문자 입력(대소문자 구분)
@@ -418,7 +418,7 @@ public class PasscertServiceExample {
         // 사용자 정보 포함 여부
         login.setReceiverInfoYN(true);
         // AppToApp 인증요청 여부
-        // true - AppToApp 인증방식, false - Talk Message 인증방식
+        // true - AppToApp 인증방식, false - 푸시(Push) 인증방식
         login.setAppUseYN(false);
         // ApptoApp 인증방식에서 사용
         // 통신사 유형('SKT', 'KT', 'LGU'), 대문자 입력(대소문자 구분)

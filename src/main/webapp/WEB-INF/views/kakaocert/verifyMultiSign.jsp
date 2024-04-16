@@ -21,6 +21,10 @@
             </c:forEach>
             
             <li>Ci (연계정보) : ${result.ci}</li>
+            <li>ReceiverName (수신자 성명) : ${result.receiverName}</li>
+            <li>ReceiverYear (수신자 출생년도) : ${result.receiverYear}</li>
+            <li>ReceiverDay (수신자 출생월일) : ${result.receiverDay}</li>
+            <li>ReceiverHP (수신자 휴대폰번호) : ${result.receiverHP}</li>
         </ul>
     </fieldset>
 </div>

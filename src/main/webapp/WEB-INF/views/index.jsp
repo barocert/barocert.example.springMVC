@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="/resources/main.css" media="screen"/>
-    <title>Barocert Service SpringMVC Example</title>
+    <title>BaroCert SpringMVC Response</title>
 </head>
 <body>
 <div id="content">

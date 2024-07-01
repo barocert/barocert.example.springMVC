@@ -1,12 +1,16 @@
 package com.barocert.example;
 
+import com.barocert.crypto.Filez;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
+import com.barocert.crypto.HASH;
 import com.barocert.BarocertException;
 import com.barocert.passcert.PasscertService;
 import com.barocert.passcert.cms.CMS;
@@ -152,7 +156,7 @@ public class PasscertServiceExample {
      * https://developers.barocert.com/reference/pass/java/sign/api#RequestSign
      */
     @RequestMapping(value = "passcert/requestSign", method = RequestMethod.GET)
-    public String requestSign(Model m) throws BarocertException {
+    public String requestSign(Model m) throws BarocertException, FileNotFoundException {
 
         // 전자서명 요청 정보
         Sign sign = new Sign();
@@ -172,12 +176,19 @@ public class PasscertServiceExample {
         sign.setCallCenterNum("1600-9854");
         // 인증요청 만료시간 - 최대 1,000(초)까지 입력 가능
         sign.setExpireIn(1000);
-        // 서명 원문 - 원문 2,800자 까지 입력가능
-        sign.setToken(passcertService.encrypt("전자서명 요청 원문"));
         // 서명 원문 유형
         // 'TEXT' - 일반 텍스트, 'HASH' - HASH 데이터, 'URL' - URL 데이터
-        // 원본데이터(originalTypeCode, originalURL, originalFormatCode) 입력시 'TEXT'사용 불가
         sign.setTokenType("URL");
+        // 원본데이터(originalTypeCode, originalURL, originalFormatCode) 입력시 'TEXT'사용 불가
+        // 서명 원문 - 원문 2,800자 까지 입력가능
+        sign.setToken(passcertService.encrypt("전자서명 요청 원문"));
+
+        // 서명 원문 유형
+        // sign.setTokenType("PDF");
+        // 서명 원문 유형이 PDF인 경우, 원문은 SHA-256, Base64 URL Safe No Padding을 사용
+        //ClassPathResource rs = new ClassPathResource("barocert.pdf");
+        // byte[] target = Filez.fileToBytesFrom(rs.getFile().getAbsolutePath());
+        // sign.setToken(passcertService.encrypt(passcertService.sha256_base64url_file(target)));
 
         // 사용자 동의 필요 여부
         sign.setUserAgreementYN(true);

@@ -83,7 +83,7 @@
 		<dependency>
 			<groupId>kr.co.linkhub</groupId>
 			<artifactId>barocert-sdk</artifactId>
-			<version>1.4.0</version>
+			<version>1.4.1</version>
 		</dependency>
 	</dependencies>
     <build>

@@ -90,7 +90,7 @@ public class KakaocertServiceExample {
     public String getIdentityStatus(Model m) {
 
         // 본인인증 요청시 반환된 접수아이디
-        String receiptID = "02304050230300000040000000000003";
+        String receiptID = "02502240230700000120000000000009";
 
         try {
             IdentityStatus result = kakaocertService.getIdentityStatus(ClientCode, receiptID);
@@ -114,7 +114,7 @@ public class KakaocertServiceExample {
     public String verifyIdentity(Model m) {
 
         // 본인인증 요청시 반환된 접수아이디
-        String receiptID = "02304050230300000040000000000003";
+        String receiptID = "02502240230700000120000000000009";
 
         try {
             IdentityResult result = kakaocertService.verifyIdentity(ClientCode, receiptID);
